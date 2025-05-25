@@ -1,17 +1,26 @@
+using System;
+using System.Windows.Forms;
+using WinFormsApp.Models;
+
 namespace WinFormsApp
 {
-    internal static class Program
+    static class Program
     {
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+
+            var dbContext = new TaskManagerDbContext();
+
+            var adminForm = new AdminForm();
+            var managerForm = new ManagerForm();
+            var memberForm = new MemberForm();
+            var registerForm = new Register();
+
+            var loginForm = new Login(dbContext, adminForm, managerForm, memberForm, registerForm);
+
+            Application.Run(loginForm);
         }
     }
 }
