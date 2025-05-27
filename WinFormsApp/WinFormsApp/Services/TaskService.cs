@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WinFormsApp.Dtos;
 using WinFormsApp.Models;
 using WinFormsApp.Repositories;
 
@@ -28,6 +29,24 @@ namespace WinFormsApp.Services
                 throw new InvalidOperationException("Error retrieving tasks.", ex);
             }
         }
+
+        public List<TaskDto> GetAllTaskDtos()
+        {
+            var tasks = _repository.GetAllTasksWithDetails();
+
+            return tasks.Select(t => new TaskDto
+            {
+                TaskId = t.TaskId,
+                Title = t.Title,
+                Description = t.Description,
+                StartDate = t.StartDate,
+                DueDate = t.DueDate,
+                PriorityName = t.Priority?.PriorityName,
+                StatusName = t.Status?.StatusName,
+                UserFullName = t.User?.FullName
+            }).ToList();
+        }
+
 
         public Models.Task? GetTaskById(int id)
         {

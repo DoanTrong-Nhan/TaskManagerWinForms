@@ -22,6 +22,14 @@ namespace WinFormsApp.Repositories
                 .Include(t => t.User)
                 .ToList();  // Fetches the tasks with their related data
         }
+        public List<Models.Task> GetAllTasksWithDetails()
+        {
+            return _context.Tasks
+                .Include(t => t.Priority)
+                .Include(t => t.Status)
+                .Include(t => t.User)
+                .ToList();
+        }
 
         public Models.Task? GetTaskById(int id)
         {

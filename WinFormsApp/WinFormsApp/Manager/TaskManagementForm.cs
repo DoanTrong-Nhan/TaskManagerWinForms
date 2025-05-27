@@ -20,30 +20,20 @@ namespace WinFormsApp
 
         private void LoadTasks()
         {
-            var tasks = _taskService.GetAllTasks()
-                .Select(t => new
-                {
-                    t.TaskId,
-                    t.Title,
-                    StartDate = t.StartDate?.ToString("dd/MM/yyyy"),
-                    DueDate = t.DueDate?.ToString("dd/MM/yyyy"),
-                    Status = t.Status?.StatusName ?? "Không rõ",
-                    Priority = t.Priority?.PriorityName ?? "Không rõ",
-                    AssignedTo = t.User?.FullName ?? "Không có"
-                })
-                .ToList();
+            var taskDtos = _taskService.GetAllTaskDtos();
 
             dgvTasks.DataSource = null;
-            dgvTasks.DataSource = tasks;
+            dgvTasks.DataSource = taskDtos;
 
             dgvTasks.Columns["TaskId"].HeaderText = "Mã";
             dgvTasks.Columns["Title"].HeaderText = "Tiêu đề";
-            dgvTasks.Columns["StartDate"].HeaderText = "Bắt đầu";
-            dgvTasks.Columns["DueDate"].HeaderText = "Hạn chót";
-            dgvTasks.Columns["Status"].HeaderText = "Trạng thái";
-            dgvTasks.Columns["Priority"].HeaderText = "Độ ưu tiên";
-            dgvTasks.Columns["AssignedTo"].HeaderText = "Người thực hiện";
+            dgvTasks.Columns["StartDateStr"].HeaderText = "Bắt đầu";
+            dgvTasks.Columns["DueDateStr"].HeaderText = "Hạn chót";
+            dgvTasks.Columns["StatusName"].HeaderText = "Trạng thái";
+            dgvTasks.Columns["PriorityName"].HeaderText = "Độ ưu tiên";
+            dgvTasks.Columns["UserFullName"].HeaderText = "Người thực hiện";
         }
+
 
         private int? GetSelectedTaskId()
         {

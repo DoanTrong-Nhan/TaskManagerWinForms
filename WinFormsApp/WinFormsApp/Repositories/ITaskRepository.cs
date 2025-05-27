@@ -15,5 +15,7 @@ namespace WinFormsApp.Repositories
         Task<List<Models.TaskStatus>> GetAllStatuses();
         Task<List<TaskPriority>> GetAllPriorities();
         Task<List<User>> GetUsersByRole(int roleId);
+
+        List<Models.Task> GetAllTasksWithDetails();
     }
 }
