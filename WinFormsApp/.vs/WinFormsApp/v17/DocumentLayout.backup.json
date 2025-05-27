@@ -3,19 +3,123 @@
   "WorkspaceRootPath": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{71BD417B-694D-4EB6-939B-ADE73E26E345}|WinFormsApp\\WinFormsApp.csproj|c:\\users\\nhant\\onedrive\\desktop\\winform\\taskmanagerwinforms\\winformsapp\\winformsapp\\register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{71BD417B-694D-4EB6-939B-ADE73E26E345}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{71BD417B-694D-4EB6-939B-ADE73E26E345}|WinFormsApp\\WinFormsApp.csproj|c:\\users\\nhant\\onedrive\\desktop\\winform\\taskmanagerwinforms\\winformsapp\\winformsapp\\manager\\taskdetailform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71BD417B-694D-4EB6-939B-ADE73E26E345}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\manager\\taskdetailform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71BD417B-694D-4EB6-939B-ADE73E26E345}|WinFormsApp\\WinFormsApp.csproj|c:\\users\\nhant\\onedrive\\desktop\\winform\\taskmanagerwinforms\\winformsapp\\winformsapp\\manager\\taskdetailform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{71BD417B-694D-4EB6-939B-ADE73E26E345}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\manager\\taskdetailform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71BD417B-694D-4EB6-939B-ADE73E26E345}|WinFormsApp\\WinFormsApp.csproj|c:\\users\\nhant\\onedrive\\desktop\\winform\\taskmanagerwinforms\\winformsapp\\winformsapp\\manager\\taskdetailform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71BD417B-694D-4EB6-939B-ADE73E26E345}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\manager\\taskdetailform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71BD417B-694D-4EB6-939B-ADE73E26E345}|WinFormsApp\\WinFormsApp.csproj|c:\\users\\nhant\\onedrive\\desktop\\winform\\taskmanagerwinforms\\winformsapp\\winformsapp\\manager\\taskmanagementform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71BD417B-694D-4EB6-939B-ADE73E26E345}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\manager\\taskmanagementform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71BD417B-694D-4EB6-939B-ADE73E26E345}|WinFormsApp\\WinFormsApp.csproj|c:\\users\\nhant\\onedrive\\desktop\\winform\\taskmanagerwinforms\\winformsapp\\winformsapp\\manager\\taskmanagementform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71BD417B-694D-4EB6-939B-ADE73E26E345}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\manager\\taskmanagementform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71BD417B-694D-4EB6-939B-ADE73E26E345}|WinFormsApp\\WinFormsApp.csproj|c:\\users\\nhant\\onedrive\\desktop\\winform\\taskmanagerwinforms\\winformsapp\\winformsapp\\models\\task.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71BD417B-694D-4EB6-939B-ADE73E26E345}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\models\\task.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71BD417B-694D-4EB6-939B-ADE73E26E345}|WinFormsApp\\WinFormsApp.csproj|C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\winformsapp\\manager\\taskmanagementform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{71BD417B-694D-4EB6-939B-ADE73E26E345}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\manager\\taskmanagementform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\MicrosoftDownload\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71BD417B-694D-4EB6-939B-ADE73E26E345}|WinFormsApp\\WinFormsApp.csproj|c:\\users\\nhant\\onedrive\\desktop\\winform\\taskmanagerwinforms\\winformsapp\\winformsapp\\manager\\managerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71BD417B-694D-4EB6-939B-ADE73E26E345}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\manager\\managerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71BD417B-694D-4EB6-939B-ADE73E26E345}|WinFormsApp\\WinFormsApp.csproj|c:\\users\\nhant\\onedrive\\desktop\\winform\\taskmanagerwinforms\\winformsapp\\winformsapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71BD417B-694D-4EB6-939B-ADE73E26E345}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71BD417B-694D-4EB6-939B-ADE73E26E345}|WinFormsApp\\WinFormsApp.csproj|C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\winformsapp\\manager\\managerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{71BD417B-694D-4EB6-939B-ADE73E26E345}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\manager\\managerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71BD417B-694D-4EB6-939B-ADE73E26E345}|WinFormsApp\\WinFormsApp.csproj|c:\\users\\nhant\\onedrive\\desktop\\winform\\taskmanagerwinforms\\winformsapp\\winformsapp\\services\\taskservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71BD417B-694D-4EB6-939B-ADE73E26E345}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\services\\taskservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71BD417B-694D-4EB6-939B-ADE73E26E345}|WinFormsApp\\WinFormsApp.csproj|c:\\users\\nhant\\onedrive\\desktop\\winform\\taskmanagerwinforms\\winformsapp\\winformsapp\\services\\itaskservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71BD417B-694D-4EB6-939B-ADE73E26E345}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\services\\itaskservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71BD417B-694D-4EB6-939B-ADE73E26E345}|WinFormsApp\\WinFormsApp.csproj|c:\\users\\nhant\\onedrive\\desktop\\winform\\taskmanagerwinforms\\winformsapp\\winformsapp\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71BD417B-694D-4EB6-939B-ADE73E26E345}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71BD417B-694D-4EB6-939B-ADE73E26E345}|WinFormsApp\\WinFormsApp.csproj|c:\\users\\nhant\\onedrive\\desktop\\winform\\taskmanagerwinforms\\winformsapp\\winformsapp\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{71BD417B-694D-4EB6-939B-ADE73E26E345}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71BD417B-694D-4EB6-939B-ADE73E26E345}|WinFormsApp\\WinFormsApp.csproj|c:\\users\\nhant\\onedrive\\desktop\\winform\\taskmanagerwinforms\\winformsapp\\winformsapp\\member\\memberform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71BD417B-694D-4EB6-939B-ADE73E26E345}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\member\\memberform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71BD417B-694D-4EB6-939B-ADE73E26E345}|WinFormsApp\\WinFormsApp.csproj|c:\\users\\nhant\\onedrive\\desktop\\winform\\taskmanagerwinforms\\winformsapp\\winformsapp\\models\\taskmanagerdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71BD417B-694D-4EB6-939B-ADE73E26E345}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\models\\taskmanagerdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71BD417B-694D-4EB6-939B-ADE73E26E345}|WinFormsApp\\WinFormsApp.csproj|C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\winformsapp\\manager\\reportform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{71BD417B-694D-4EB6-939B-ADE73E26E345}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\manager\\reportform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71BD417B-694D-4EB6-939B-ADE73E26E345}|WinFormsApp\\WinFormsApp.csproj|C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\winformsapp\\manager\\employeemanagementform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{71BD417B-694D-4EB6-939B-ADE73E26E345}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\manager\\employeemanagementform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71BD417B-694D-4EB6-939B-ADE73E26E345}|WinFormsApp\\WinFormsApp.csproj|c:\\users\\nhant\\onedrive\\desktop\\winform\\taskmanagerwinforms\\winformsapp\\winformsapp\\repositories\\taskrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71BD417B-694D-4EB6-939B-ADE73E26E345}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\repositories\\taskrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71BD417B-694D-4EB6-939B-ADE73E26E345}|WinFormsApp\\WinFormsApp.csproj|c:\\users\\nhant\\onedrive\\desktop\\winform\\taskmanagerwinforms\\winformsapp\\winformsapp\\repositories\\itaskrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71BD417B-694D-4EB6-939B-ADE73E26E345}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\repositories\\itaskrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71BD417B-694D-4EB6-939B-ADE73E26E345}|WinFormsApp\\WinFormsApp.csproj|c:\\users\\nhant\\onedrive\\desktop\\winform\\taskmanagerwinforms\\winformsapp\\winformsapp\\models\\taskcomment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71BD417B-694D-4EB6-939B-ADE73E26E345}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\models\\taskcomment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71BD417B-694D-4EB6-939B-ADE73E26E345}|WinFormsApp\\WinFormsApp.csproj|c:\\users\\nhant\\onedrive\\desktop\\winform\\taskmanagerwinforms\\winformsapp\\winformsapp\\register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71BD417B-694D-4EB6-939B-ADE73E26E345}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71BD417B-694D-4EB6-939B-ADE73E26E345}|WinFormsApp\\WinFormsApp.csproj|c:\\users\\nhant\\onedrive\\desktop\\winform\\taskmanagerwinforms\\winformsapp\\winformsapp\\login.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71BD417B-694D-4EB6-939B-ADE73E26E345}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\login.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71BD417B-694D-4EB6-939B-ADE73E26E345}|WinFormsApp\\WinFormsApp.csproj|C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\winformsapp\\admin\\adminform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{71BD417B-694D-4EB6-939B-ADE73E26E345}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\admin\\adminform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71BD417B-694D-4EB6-939B-ADE73E26E345}|WinFormsApp\\WinFormsApp.csproj|c:\\users\\nhant\\onedrive\\desktop\\winform\\taskmanagerwinforms\\winformsapp\\winformsapp\\manager\\managerform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71BD417B-694D-4EB6-939B-ADE73E26E345}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\manager\\managerform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{71BD417B-694D-4EB6-939B-ADE73E26E345}|WinFormsApp\\WinFormsApp.csproj|c:\\users\\nhant\\onedrive\\desktop\\winform\\taskmanagerwinforms\\winformsapp\\winformsapp\\register.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{71BD417B-694D-4EB6-939B-ADE73E26E345}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\register.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{71BD417B-694D-4EB6-939B-ADE73E26E345}|WinFormsApp\\WinFormsApp.csproj|c:\\users\\nhant\\onedrive\\desktop\\winform\\taskmanagerwinforms\\winformsapp\\winformsapp\\register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{71BD417B-694D-4EB6-939B-ADE73E26E345}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{71BD417B-694D-4EB6-939B-ADE73E26E345}|WinFormsApp\\WinFormsApp.csproj|C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\winformsapp\\register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{71BD417B-694D-4EB6-939B-ADE73E26E345}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71BD417B-694D-4EB6-939B-ADE73E26E345}|WinFormsApp\\WinFormsApp.csproj|C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\winformsapp\\member\\memberform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{71BD417B-694D-4EB6-939B-ADE73E26E345}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\member\\memberform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71BD417B-694D-4EB6-939B-ADE73E26E345}|WinFormsApp\\WinFormsApp.csproj|c:\\users\\nhant\\onedrive\\desktop\\winform\\taskmanagerwinforms\\winformsapp\\winformsapp\\manager\\employeemanagementform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71BD417B-694D-4EB6-939B-ADE73E26E345}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\manager\\employeemanagementform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -25,7 +129,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -33,7 +137,96 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TaskDetailForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\Manager\\TaskDetailForm.Designer.cs",
+              "RelativeDocumentMoniker": "WinFormsApp\\Manager\\TaskDetailForm.Designer.cs",
+              "ToolTip": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\Manager\\TaskDetailForm.Designer.cs",
+              "RelativeToolTip": "WinFormsApp\\Manager\\TaskDetailForm.Designer.cs",
+              "ViewState": "AgIAAKkAAAAAAAAAAAAAAL0AAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T14:51:01.955Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TaskDetailForm.cs",
+              "DocumentMoniker": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\Manager\\TaskDetailForm.cs",
+              "RelativeDocumentMoniker": "WinFormsApp\\Manager\\TaskDetailForm.cs",
+              "ToolTip": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\Manager\\TaskDetailForm.cs",
+              "RelativeToolTip": "WinFormsApp\\Manager\\TaskDetailForm.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAAAgwDwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T14:50:46.607Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "TaskDetailForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\Manager\\TaskDetailForm.cs",
+              "RelativeDocumentMoniker": "WinFormsApp\\Manager\\TaskDetailForm.cs",
+              "ToolTip": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\Manager\\TaskDetailForm.cs [Design]",
+              "RelativeToolTip": "WinFormsApp\\Manager\\TaskDetailForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T14:50:35.911Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "TaskManagementForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\Manager\\TaskManagementForm.cs",
+              "RelativeDocumentMoniker": "WinFormsApp\\Manager\\TaskManagementForm.cs",
+              "ToolTip": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\Manager\\TaskManagementForm.cs [Design]",
+              "RelativeToolTip": "WinFormsApp\\Manager\\TaskManagementForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T09:06:43.229Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TaskManagementForm.cs",
+              "DocumentMoniker": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\Manager\\TaskManagementForm.cs",
+              "RelativeDocumentMoniker": "WinFormsApp\\Manager\\TaskManagementForm.cs",
+              "ToolTip": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\Manager\\TaskManagementForm.cs",
+              "RelativeToolTip": "WinFormsApp\\Manager\\TaskManagementForm.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAAAQwFAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T09:13:35.774Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Task.cs",
+              "DocumentMoniker": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\Models\\Task.cs",
+              "RelativeDocumentMoniker": "WinFormsApp\\Models\\Task.cs",
+              "ToolTip": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\Models\\Task.cs",
+              "RelativeToolTip": "WinFormsApp\\Models\\Task.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAUwB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T03:46:03.834Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TaskManagementForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\Manager\\TaskManagementForm.Designer.cs",
+              "RelativeDocumentMoniker": "WinFormsApp\\Manager\\TaskManagementForm.Designer.cs",
+              "ToolTip": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\Manager\\TaskManagementForm.Designer.cs",
+              "RelativeToolTip": "WinFormsApp\\Manager\\TaskManagementForm.Designer.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAAAAAEQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T13:11:29.122Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "Microsoft.Common.CurrentVersion.targets",
               "DocumentMoniker": "D:\\MicrosoftDownload\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
               "ToolTip": "D:\\MicrosoftDownload\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
@@ -44,7 +237,234 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
+              "Title": "ManagerForm.cs",
+              "DocumentMoniker": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\Manager\\ManagerForm.cs",
+              "RelativeDocumentMoniker": "WinFormsApp\\Manager\\ManagerForm.cs",
+              "ToolTip": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\Manager\\ManagerForm.cs",
+              "RelativeToolTip": "WinFormsApp\\Manager\\ManagerForm.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABMAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T09:01:00.454Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\Program.cs",
+              "RelativeDocumentMoniker": "WinFormsApp\\Program.cs",
+              "ToolTip": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\Program.cs",
+              "RelativeToolTip": "WinFormsApp\\Program.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAYwBgAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T13:24:51.984Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ManagerForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\Manager\\ManagerForm.cs",
+              "RelativeDocumentMoniker": "WinFormsApp\\Manager\\ManagerForm.cs",
+              "ToolTip": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\Manager\\ManagerForm.cs [Design]",
+              "RelativeToolTip": "WinFormsApp\\Manager\\ManagerForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T07:09:29.346Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "TaskService.cs",
+              "DocumentMoniker": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\Services\\TaskService.cs",
+              "RelativeDocumentMoniker": "WinFormsApp\\Services\\TaskService.cs",
+              "ToolTip": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\Services\\TaskService.cs",
+              "RelativeToolTip": "WinFormsApp\\Services\\TaskService.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAACMAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T13:23:42.632Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ITaskService.cs",
+              "DocumentMoniker": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\Services\\ITaskService.cs",
+              "RelativeDocumentMoniker": "WinFormsApp\\Services\\ITaskService.cs",
+              "ToolTip": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\Services\\ITaskService.cs",
+              "RelativeToolTip": "WinFormsApp\\Services\\ITaskService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T13:22:26.965Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Login.cs",
+              "DocumentMoniker": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\Login.cs",
+              "RelativeDocumentMoniker": "WinFormsApp\\Login.cs",
+              "ToolTip": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\Login.cs",
+              "RelativeToolTip": "WinFormsApp\\Login.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T09:10:32.002Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Login.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\Login.cs",
+              "RelativeDocumentMoniker": "WinFormsApp\\Login.cs",
+              "ToolTip": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\Login.cs [Design]",
+              "RelativeToolTip": "WinFormsApp\\Login.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T14:17:54.831Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "MemberForm.cs",
+              "DocumentMoniker": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\Member\\MemberForm.cs",
+              "RelativeDocumentMoniker": "WinFormsApp\\Member\\MemberForm.cs",
+              "ToolTip": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\Member\\MemberForm.cs",
+              "RelativeToolTip": "WinFormsApp\\Member\\MemberForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T14:16:16.807Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "TaskManagerDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\Models\\TaskManagerDbContext.cs",
+              "RelativeDocumentMoniker": "WinFormsApp\\Models\\TaskManagerDbContext.cs",
+              "ToolTip": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\Models\\TaskManagerDbContext.cs",
+              "RelativeToolTip": "WinFormsApp\\Models\\TaskManagerDbContext.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAA7wB4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T03:46:07.848Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ReportForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\Manager\\ReportForm.cs",
+              "RelativeDocumentMoniker": "WinFormsApp\\Manager\\ReportForm.cs",
+              "ToolTip": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\Manager\\ReportForm.cs [Design]",
+              "RelativeToolTip": "WinFormsApp\\Manager\\ReportForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T09:08:45.638Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "EmployeeManagementForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\Manager\\EmployeeManagementForm.cs",
+              "RelativeDocumentMoniker": "WinFormsApp\\Manager\\EmployeeManagementForm.cs",
+              "ToolTip": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\Manager\\EmployeeManagementForm.cs [Design]",
+              "RelativeToolTip": "WinFormsApp\\Manager\\EmployeeManagementForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T09:07:38.343Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "TaskRepository.cs",
+              "DocumentMoniker": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\Repositories\\TaskRepository.cs",
+              "RelativeDocumentMoniker": "WinFormsApp\\Repositories\\TaskRepository.cs",
+              "ToolTip": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\Repositories\\TaskRepository.cs",
+              "RelativeToolTip": "WinFormsApp\\Repositories\\TaskRepository.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAmwCEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T13:29:31.549Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "ITaskRepository.cs",
+              "DocumentMoniker": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\Repositories\\ITaskRepository.cs",
+              "RelativeDocumentMoniker": "WinFormsApp\\Repositories\\ITaskRepository.cs",
+              "ToolTip": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\Repositories\\ITaskRepository.cs",
+              "RelativeToolTip": "WinFormsApp\\Repositories\\ITaskRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T13:28:49.9Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "TaskComment.cs",
+              "DocumentMoniker": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\Models\\TaskComment.cs",
+              "RelativeDocumentMoniker": "WinFormsApp\\Models\\TaskComment.cs",
+              "ToolTip": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\Models\\TaskComment.cs",
+              "RelativeToolTip": "WinFormsApp\\Models\\TaskComment.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T03:46:08.585Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Register.cs",
+              "DocumentMoniker": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\Register.cs",
+              "RelativeDocumentMoniker": "WinFormsApp\\Register.cs",
+              "ToolTip": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\Register.cs",
+              "RelativeToolTip": "WinFormsApp\\Register.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAAAB8AAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T06:19:08.662Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "AdminForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\Admin\\AdminForm.cs",
+              "RelativeDocumentMoniker": "WinFormsApp\\Admin\\AdminForm.cs",
+              "ToolTip": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\Admin\\AdminForm.cs [Design]",
+              "RelativeToolTip": "WinFormsApp\\Admin\\AdminForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T03:25:08.588Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Login.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\Login.Designer.cs",
+              "RelativeDocumentMoniker": "WinFormsApp\\Login.Designer.cs",
+              "ToolTip": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\Login.Designer.cs",
+              "RelativeToolTip": "WinFormsApp\\Login.Designer.cs",
+              "ViewState": "AgIAAGkAAAAAAAAAAAAAAG4AAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T03:25:19.004Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Register.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\Register.cs",
+              "RelativeDocumentMoniker": "WinFormsApp\\Register.cs",
+              "ToolTip": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\Register.cs [Design]",
+              "RelativeToolTip": "WinFormsApp\\Register.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T06:18:50.799Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
               "Title": "Register.Designer.cs",
               "DocumentMoniker": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\Register.Designer.cs",
               "RelativeDocumentMoniker": "WinFormsApp\\Register.Designer.cs",
@@ -57,28 +477,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Register.cs",
-              "DocumentMoniker": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\Register.cs",
-              "RelativeDocumentMoniker": "WinFormsApp\\Register.cs",
-              "ToolTip": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\Register.cs",
-              "RelativeToolTip": "WinFormsApp\\Register.cs",
-              "ViewState": "AgIAADcAAAAAAAAAAAApwEMAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 25,
+              "Title": "ManagerForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\Manager\\ManagerForm.Designer.cs",
+              "RelativeDocumentMoniker": "WinFormsApp\\Manager\\ManagerForm.Designer.cs",
+              "ToolTip": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\Manager\\ManagerForm.Designer.cs",
+              "RelativeToolTip": "WinFormsApp\\Manager\\ManagerForm.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T06:19:08.662Z",
+              "WhenOpened": "2025-05-25T08:54:16.927Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Register.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\Register.cs",
-              "RelativeDocumentMoniker": "WinFormsApp\\Register.cs",
-              "ToolTip": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\Register.cs [Design]",
-              "RelativeToolTip": "WinFormsApp\\Register.cs [Design]",
+              "DocumentIndex": 28,
+              "Title": "MemberForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\Member\\MemberForm.cs",
+              "RelativeDocumentMoniker": "WinFormsApp\\Member\\MemberForm.cs",
+              "ToolTip": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\Member\\MemberForm.cs [Design]",
+              "RelativeToolTip": "WinFormsApp\\Member\\MemberForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T06:18:50.799Z",
+              "WhenOpened": "2025-05-25T07:09:11.377Z",
               "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "EmployeeManagementForm.cs",
+              "DocumentMoniker": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\Manager\\EmployeeManagementForm.cs",
+              "RelativeDocumentMoniker": "WinFormsApp\\Manager\\EmployeeManagementForm.cs",
+              "ToolTip": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\Manager\\EmployeeManagementForm.cs",
+              "RelativeToolTip": "WinFormsApp\\Manager\\EmployeeManagementForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T09:16:18.714Z",
+              "EditorCaption": ""
             }
           ]
         }
