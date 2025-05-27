@@ -10,6 +10,12 @@
         private Button btnDelete;
         private Button btnView;
 
+        private TextBox txtSearchTitle;
+        private ComboBox cmbStatus;
+        private ComboBox cmbPriority;
+        private Button btnSearch;
+
+
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -21,87 +27,137 @@
 
         private void InitializeComponent()
         {
-            this.dgvTasks = new DataGridView();
-            this.btnAdd = new Button();
-            this.btnEdit = new Button();
-            this.btnDelete = new Button();
-            this.btnView = new Button();
-
-            this.SuspendLayout();
-
+            dgvTasks = new DataGridView();
+            btnAdd = new Button();
+            btnEdit = new Button();
+            btnDelete = new Button();
+            btnView = new Button();
+            txtSearchTitle = new TextBox();
+            cmbStatus = new ComboBox();
+            cmbPriority = new ComboBox();
+            btnSearch = new Button();
+            ((System.ComponentModel.ISupportInitialize)dgvTasks).BeginInit();
+            SuspendLayout();
             // 
             // dgvTasks
             // 
-            this.dgvTasks.AllowUserToAddRows = false;
-            this.dgvTasks.AllowUserToDeleteRows = false;
-            this.dgvTasks.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            this.dgvTasks.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvTasks.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTasks.Location = new Point(20, 20);
-            this.dgvTasks.MultiSelect = false;
-            this.dgvTasks.Name = "dgvTasks";
-            this.dgvTasks.ReadOnly = true;
-            this.dgvTasks.RowHeadersWidth = 51;
-            this.dgvTasks.RowTemplate.Height = 29;
-            this.dgvTasks.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTasks.Size = new Size(740, 320);
-            this.dgvTasks.TabIndex = 0;
-
+            dgvTasks.AllowUserToAddRows = false;
+            dgvTasks.AllowUserToDeleteRows = false;
+            dgvTasks.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgvTasks.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvTasks.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvTasks.Location = new Point(25, 25);
+            dgvTasks.Margin = new Padding(4, 4, 4, 4);
+            dgvTasks.MultiSelect = false;
+            dgvTasks.Name = "dgvTasks";
+            dgvTasks.ReadOnly = true;
+            dgvTasks.RowHeadersWidth = 51;
+            dgvTasks.RowTemplate.Height = 29;
+            dgvTasks.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvTasks.Size = new Size(925, 393);
+            dgvTasks.TabIndex = 0;
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new Point(20, 360);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new Size(100, 40);
-            this.btnAdd.Text = "Thêm";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new EventHandler(this.btnAdd_Click);
-
+            btnAdd.Location = new Point(25, 470);
+            btnAdd.Margin = new Padding(4, 4, 4, 4);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(125, 50);
+            btnAdd.TabIndex = 1;
+            btnAdd.Text = "Thêm";
+            btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new Point(140, 360);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new Size(100, 40);
-            this.btnEdit.Text = "Sửa";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new EventHandler(this.btnEdit_Click);
-
+            btnEdit.Location = new Point(175, 470);
+            btnEdit.Margin = new Padding(4, 4, 4, 4);
+            btnEdit.Name = "btnEdit";
+            btnEdit.Size = new Size(125, 50);
+            btnEdit.TabIndex = 2;
+            btnEdit.Text = "Sửa";
+            btnEdit.UseVisualStyleBackColor = true;
+            btnEdit.Click += btnEdit_Click;
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new Point(260, 360);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new Size(100, 40);
-            this.btnDelete.Text = "Xoá";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new EventHandler(this.btnDelete_Click);
-
+            btnDelete.Location = new Point(325, 470);
+            btnDelete.Margin = new Padding(4, 4, 4, 4);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(125, 50);
+            btnDelete.TabIndex = 3;
+            btnDelete.Text = "Xoá";
+            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
             // btnView
             // 
-            this.btnView.Location = new Point(380, 360);
-            this.btnView.Name = "btnView";
-            this.btnView.Size = new Size(120, 40);
-            this.btnView.Text = "Xem Chi Tiết";
-            this.btnView.UseVisualStyleBackColor = true;
-            this.btnView.Click += new EventHandler(this.btnView_Click);
-
+            btnView.Location = new Point(475, 470);
+            btnView.Margin = new Padding(4, 4, 4, 4);
+            btnView.Name = "btnView";
+            btnView.Size = new Size(150, 50);
+            btnView.TabIndex = 4;
+            btnView.Text = "Xem Chi Tiết";
+            btnView.UseVisualStyleBackColor = true;
+            btnView.Click += btnView_Click;
+            // 
+            // txtSearchTitle
+            // 
+            txtSearchTitle.Location = new Point(25, 430);
+            txtSearchTitle.Margin = new Padding(4, 4, 4, 4);
+            txtSearchTitle.Name = "txtSearchTitle";
+            txtSearchTitle.PlaceholderText = "Tiêu đề...";
+            txtSearchTitle.Size = new Size(186, 31);
+            txtSearchTitle.TabIndex = 5;
+            // 
+            // cmbStatus
+            // 
+            cmbStatus.Location = new Point(238, 430);
+            cmbStatus.Margin = new Padding(4, 4, 4, 4);
+            cmbStatus.Name = "cmbStatus";
+            cmbStatus.Size = new Size(149, 33);
+            cmbStatus.TabIndex = 6;
+            // 
+            // cmbPriority
+            // 
+            cmbPriority.Location = new Point(412, 430);
+            cmbPriority.Margin = new Padding(4, 4, 4, 4);
+            cmbPriority.Name = "cmbPriority";
+            cmbPriority.Size = new Size(149, 33);
+            cmbPriority.TabIndex = 7;
+            // 
+            // btnSearch
+            // 
+            btnSearch.Location = new Point(588, 430);
+            btnSearch.Margin = new Padding(4, 4, 4, 4);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(125, 34);
+            btnSearch.TabIndex = 8;
+            btnSearch.Text = "Tìm kiếm";
+            btnSearch.Click += btnSearch_Click;
             // 
             // TaskManagementForm
             // 
-            this.AutoScaleDimensions = new SizeF(8F, 20F);
-            this.AutoScaleMode = AutoScaleMode.Font;
-            this.ClientSize = new Size(800, 420);
-            this.Controls.Add(this.dgvTasks);
-            this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.btnEdit);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnView);
-            this.Name = "TaskManagementForm";
-            this.StartPosition = FormStartPosition.CenterScreen;
-            this.Text = "Quản lý Công việc";
-            this.ResumeLayout(false);
+            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1000, 550); // tăng chiều cao để đủ chỗ
+
+            Controls.Add(dgvTasks);
+            Controls.Add(btnAdd);
+            Controls.Add(btnEdit);
+            Controls.Add(btnDelete);
+            Controls.Add(btnView);
+            Controls.Add(txtSearchTitle);
+            Controls.Add(cmbStatus);
+            Controls.Add(cmbPriority);
+            Controls.Add(btnSearch);
+            Margin = new Padding(4, 4, 4, 4);
+            Name = "TaskManagementForm";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Quản lý Công việc";
+            ((System.ComponentModel.ISupportInitialize)dgvTasks).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

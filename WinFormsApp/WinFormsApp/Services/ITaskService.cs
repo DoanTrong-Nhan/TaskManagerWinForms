@@ -22,6 +22,9 @@ namespace WinFormsApp.Services
 
         List<TaskDto> GetAllTaskDtos();
 
+        public List<TaskDto> SearchTasks(string? title, int? statusId, int? priorityId);
+        
+
     }
 
 }

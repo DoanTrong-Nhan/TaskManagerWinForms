@@ -1,6 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
+using WinFormsApp.Dtos;
 using WinFormsApp.Models;
 
 namespace WinFormsApp.Repositories
@@ -90,6 +93,49 @@ namespace WinFormsApp.Repositories
         public async Task<List<User>> GetUsersByRole(int roleId)
         {
             return await _context.Users.Where(u => u.RoleId == roleId).ToListAsync();
+        }
+
+        public List<TaskDto> GetFilteredTasks(string? title, int? statusId, int? priorityId)
+        {
+            var taskDtos = new List<TaskDto>();
+
+            using (var conn = _context.Database.GetDbConnection())
+            {
+                if (conn.State != System.Data.ConnectionState.Open)
+                    conn.Open();
+
+                using (var cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = "sp_FilterTasks";
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add(new SqlParameter("@Title", title ?? (object)DBNull.Value));
+                    cmd.Parameters.Add(new SqlParameter("@StatusId", statusId ?? (object)DBNull.Value));
+                    cmd.Parameters.Add(new SqlParameter("@PriorityId", priorityId ?? (object)DBNull.Value));
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            var dto = new TaskDto
+                            {
+                                TaskId = reader.GetInt32(reader.GetOrdinal("TaskId")),
+                                Title = reader.GetString(reader.GetOrdinal("Title")),
+                                Description = reader.IsDBNull(reader.GetOrdinal("Description")) ? null : reader.GetString(reader.GetOrdinal("Description")),
+                                StartDate = reader.IsDBNull(reader.GetOrdinal("StartDate")) ? null : reader.GetDateTime(reader.GetOrdinal("StartDate")),
+                                DueDate = reader.IsDBNull(reader.GetOrdinal("DueDate")) ? null : reader.GetDateTime(reader.GetOrdinal("DueDate")),
+                                StatusName = reader.IsDBNull(reader.GetOrdinal("StatusName")) ? null : reader.GetString(reader.GetOrdinal("StatusName")),
+                                PriorityName = reader.IsDBNull(reader.GetOrdinal("PriorityName")) ? null : reader.GetString(reader.GetOrdinal("PriorityName")),
+                                UserFullName = reader.IsDBNull(reader.GetOrdinal("UserFullName")) ? null : reader.GetString(reader.GetOrdinal("UserFullName")),
+                            };
+
+                            taskDtos.Add(dto);
+                        }
+                    }
+                }
+            }
+
+            return taskDtos;
         }
     }
 }

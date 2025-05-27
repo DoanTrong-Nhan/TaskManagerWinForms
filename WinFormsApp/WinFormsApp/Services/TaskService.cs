@@ -122,5 +122,10 @@ namespace WinFormsApp.Services
         {
             return await _repository.GetUsersByRole(roleId);
         }
+
+        public List<TaskDto> SearchTasks(string? title, int? statusId, int? priorityId)
+        {
+            return _repository.GetFilteredTasks(title, statusId, priorityId);
+        }
     }
 }

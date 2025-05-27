@@ -300,3 +300,10 @@ C:\Users\nhant\OneDrive\Desktop\Winfor\TaskManagerWinForms\WinFormsApp\WinFormsA
 C:\Users\nhant\OneDrive\Desktop\Winfor\TaskManagerWinForms\WinFormsApp\WinFormsApp\bin\Debug\net8.0-windows\WinFormsApp.pdb
 C:\Users\nhant\OneDrive\Desktop\Winfor\TaskManagerWinForms\WinFormsApp\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.genruntimeconfig.cache
 C:\Users\nhant\OneDrive\Desktop\Winfor\TaskManagerWinForms\WinFormsApp\WinFormsApp\obj\Debug\net8.0-windows\ref\WinFormsApp.dll
+C:\Users\nhant\OneDrive\Desktop\Winfor\TaskManagerWinForms\WinFormsApp\WinFormsApp\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.dll
+C:\Users\nhant\OneDrive\Desktop\Winfor\TaskManagerWinForms\WinFormsApp\WinFormsApp\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Users\nhant\OneDrive\Desktop\Winfor\TaskManagerWinForms\WinFormsApp\WinFormsApp\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.Json.dll
+C:\Users\nhant\OneDrive\Desktop\Winfor\TaskManagerWinForms\WinFormsApp\WinFormsApp\bin\Debug\net8.0-windows\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\nhant\OneDrive\Desktop\Winfor\TaskManagerWinForms\WinFormsApp\WinFormsApp\bin\Debug\net8.0-windows\Microsoft.Extensions.FileProviders.Physical.dll
+C:\Users\nhant\OneDrive\Desktop\Winfor\TaskManagerWinForms\WinFormsApp\WinFormsApp\bin\Debug\net8.0-windows\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\Users\nhant\OneDrive\Desktop\Winfor\TaskManagerWinForms\WinFormsApp\WinFormsApp\bin\Debug\net8.0-windows\appsettings.json
