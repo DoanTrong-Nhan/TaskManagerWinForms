@@ -47,20 +47,21 @@
             dgvTasks.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvTasks.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvTasks.Location = new Point(25, 25);
-            dgvTasks.Margin = new Padding(4, 4, 4, 4);
+            dgvTasks.Margin = new Padding(4);
             dgvTasks.MultiSelect = false;
             dgvTasks.Name = "dgvTasks";
             dgvTasks.ReadOnly = true;
             dgvTasks.RowHeadersWidth = 51;
             dgvTasks.RowTemplate.Height = 29;
             dgvTasks.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvTasks.Size = new Size(925, 393);
+            dgvTasks.Size = new Size(879, 387);
             dgvTasks.TabIndex = 0;
             // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(25, 470);
-            btnAdd.Margin = new Padding(4, 4, 4, 4);
+            btnAdd.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnAdd.Location = new Point(25, 475);
+            btnAdd.Margin = new Padding(4);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(125, 50);
             btnAdd.TabIndex = 1;
@@ -70,8 +71,9 @@
             // 
             // btnEdit
             // 
-            btnEdit.Location = new Point(175, 470);
-            btnEdit.Margin = new Padding(4, 4, 4, 4);
+            btnEdit.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnEdit.Location = new Point(175, 475);
+            btnEdit.Margin = new Padding(4);
             btnEdit.Name = "btnEdit";
             btnEdit.Size = new Size(125, 50);
             btnEdit.TabIndex = 2;
@@ -81,8 +83,9 @@
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(325, 470);
-            btnDelete.Margin = new Padding(4, 4, 4, 4);
+            btnDelete.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnDelete.Location = new Point(325, 475);
+            btnDelete.Margin = new Padding(4);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(125, 50);
             btnDelete.TabIndex = 3;
@@ -92,8 +95,9 @@
             // 
             // btnView
             // 
-            btnView.Location = new Point(475, 470);
-            btnView.Margin = new Padding(4, 4, 4, 4);
+            btnView.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnView.Location = new Point(475, 475);
+            btnView.Margin = new Padding(4);
             btnView.Name = "btnView";
             btnView.Size = new Size(150, 50);
             btnView.TabIndex = 4;
@@ -103,33 +107,38 @@
             // 
             // txtSearchTitle
             // 
-            txtSearchTitle.Location = new Point(25, 430);
-            txtSearchTitle.Margin = new Padding(4, 4, 4, 4);
+            txtSearchTitle.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            txtSearchTitle.Location = new Point(24, 435);
+            txtSearchTitle.Margin = new Padding(4);
             txtSearchTitle.Name = "txtSearchTitle";
             txtSearchTitle.PlaceholderText = "Tiêu đề...";
             txtSearchTitle.Size = new Size(186, 31);
             txtSearchTitle.TabIndex = 5;
+            txtSearchTitle.UseWaitCursor = true;
             // 
             // cmbStatus
             // 
-            cmbStatus.Location = new Point(238, 430);
-            cmbStatus.Margin = new Padding(4, 4, 4, 4);
+            cmbStatus.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            cmbStatus.Location = new Point(237, 435);
+            cmbStatus.Margin = new Padding(4);
             cmbStatus.Name = "cmbStatus";
             cmbStatus.Size = new Size(149, 33);
             cmbStatus.TabIndex = 6;
             // 
             // cmbPriority
             // 
-            cmbPriority.Location = new Point(412, 430);
-            cmbPriority.Margin = new Padding(4, 4, 4, 4);
+            cmbPriority.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            cmbPriority.Location = new Point(411, 435);
+            cmbPriority.Margin = new Padding(4);
             cmbPriority.Name = "cmbPriority";
             cmbPriority.Size = new Size(149, 33);
             cmbPriority.TabIndex = 7;
             // 
             // btnSearch
             // 
-            btnSearch.Location = new Point(588, 430);
-            btnSearch.Margin = new Padding(4, 4, 4, 4);
+            btnSearch.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnSearch.Location = new Point(587, 435);
+            btnSearch.Margin = new Padding(4);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(125, 34);
             btnSearch.TabIndex = 8;
@@ -140,8 +149,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1000, 550); // tăng chiều cao để đủ chỗ
-
+            ClientSize = new Size(954, 544);
             Controls.Add(dgvTasks);
             Controls.Add(btnAdd);
             Controls.Add(btnEdit);
@@ -151,7 +159,7 @@
             Controls.Add(cmbStatus);
             Controls.Add(cmbPriority);
             Controls.Add(btnSearch);
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             Name = "TaskManagementForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Quản lý Công việc";
