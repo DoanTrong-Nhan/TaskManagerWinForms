@@ -20,5 +20,7 @@ namespace WinFormsApp.Repositories
         List<Models.Task> GetAllTasksWithDetails();
 
         List<TaskDto> GetFilteredTasks(string title, int? statusId, int? priorityId);
+
+        public List<TaskDto> GetTasksByUserId(int userId);
     }
 }

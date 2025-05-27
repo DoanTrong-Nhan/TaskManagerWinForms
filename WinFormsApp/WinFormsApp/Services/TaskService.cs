@@ -127,5 +127,11 @@ namespace WinFormsApp.Services
         {
             return _repository.GetFilteredTasks(title, statusId, priorityId);
         }
+
+        public List<TaskDto> GetTasksByUserId(int userId)
+        {
+            return _repository.GetTasksByUserId(userId);
+        }
+
     }
 }

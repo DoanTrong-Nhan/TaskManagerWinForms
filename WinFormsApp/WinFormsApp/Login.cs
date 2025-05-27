@@ -3,6 +3,7 @@ using System;
 using System.Linq;
 using System.Windows.Forms;
 using WinFormsApp.Models;
+using WinFormsApp.Services; // để dùng ITaskService
 using static WinFormsApp.Register;
 
 namespace WinFormsApp
@@ -12,17 +13,24 @@ namespace WinFormsApp
         private readonly TaskManagerDbContext _context;
         private readonly AdminForm _adminForm;
         private readonly ManagerForm _managerForm;
-        private readonly MemberForm _memberForm;
         private readonly Register _registerForm;
+        private readonly ITaskService _taskService;
+        private readonly IServiceProvider _serviceProvider;
 
-        public Login(TaskManagerDbContext context, AdminForm adminForm, ManagerForm managerForm, MemberForm memberForm, Register registerForm)
+        public Login(TaskManagerDbContext context,
+                     AdminForm adminForm,
+                     ManagerForm managerForm,
+                     Register registerForm,
+                     ITaskService taskService,
+                     IServiceProvider serviceProvider)
         {
             InitializeComponent();
             _context = context;
             _adminForm = adminForm;
             _managerForm = managerForm;
-            _memberForm = memberForm;
             _registerForm = registerForm;
+            _taskService = taskService;
+            _serviceProvider = serviceProvider;
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -50,12 +58,17 @@ namespace WinFormsApp
                     case "Admin":
                         _adminForm.Show();
                         break;
+
                     case "Manager":
                         _managerForm.Show();
                         break;
+
                     case "Member":
-                        _memberForm.Show();
+                        // Tạo MemberForm với userId
+                        var memberForm = new MemberForm(_taskService, user.UserId);
+                        memberForm.Show();
                         break;
+
                     default:
                         MessageBox.Show("Vai trò không hợp lệ.");
                         this.Show();
