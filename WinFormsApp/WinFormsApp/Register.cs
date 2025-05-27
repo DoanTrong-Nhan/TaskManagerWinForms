@@ -56,7 +56,7 @@ namespace WinFormsApp
                 PasswordHash = hashedPassword,
                 FullName = fullName,
                 Email = email,
-                RoleId = 3
+                RoleId = 2
             };
 
             _context.Users.Add(newUser);
