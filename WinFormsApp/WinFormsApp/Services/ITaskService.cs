@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WinFormsApp.Dtos;
 using WinFormsApp.Models;
 
 namespace WinFormsApp.Services
@@ -18,6 +19,11 @@ namespace WinFormsApp.Services
         Task<List<Models.TaskStatus>> GetAllStatuses();
         Task<List<TaskPriority>> GetAllPriorities();
         Task<List<User>> GetUsersByRole(int roleId);
+
+        List<TaskDto> GetAllTaskDtos();
+
+        public List<TaskDto> SearchTasks(string? title, int? statusId, int? priorityId);
+        
 
     }
 

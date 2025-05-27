@@ -1,6 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
+using WinFormsApp.Dtos;
 using WinFormsApp.Models;
 
 namespace WinFormsApp.Repositories
@@ -21,6 +24,14 @@ namespace WinFormsApp.Repositories
                 .Include(t => t.Status)
                 .Include(t => t.User)
                 .ToList();  // Fetches the tasks with their related data
+        }
+        public List<Models.Task> GetAllTasksWithDetails()
+        {
+            return _context.Tasks
+                .Include(t => t.Priority)
+                .Include(t => t.Status)
+                .Include(t => t.User)
+                .ToList();
         }
 
         public Models.Task? GetTaskById(int id)
@@ -83,5 +94,52 @@ namespace WinFormsApp.Repositories
         {
             return await _context.Users.Where(u => u.RoleId == roleId).ToListAsync();
         }
+        public List<TaskDto> GetFilteredTasks(string? title, int? statusId, int? priorityId)
+        {
+            var taskDtos = new List<TaskDto>();
+
+            var connection = _context.Database.GetDbConnection();
+
+            try
+            {
+                _context.Database.OpenConnection(); // Mở kết nối an toàn
+                using (var command = connection.CreateCommand())
+                {
+                    command.CommandText = "sp_FilterTasks";
+                    command.CommandType = System.Data.CommandType.StoredProcedure;
+
+                    command.Parameters.Add(new SqlParameter("@Title", title ?? (object)DBNull.Value));
+                    command.Parameters.Add(new SqlParameter("@StatusId", statusId ?? (object)DBNull.Value));
+                    command.Parameters.Add(new SqlParameter("@PriorityId", priorityId ?? (object)DBNull.Value));
+
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            var dto = new TaskDto
+                            {
+                                TaskId = reader.GetInt32(reader.GetOrdinal("TaskId")),
+                                Title = reader.GetString(reader.GetOrdinal("Title")),
+                                Description = reader.IsDBNull(reader.GetOrdinal("Description")) ? null : reader.GetString(reader.GetOrdinal("Description")),
+                                StartDate = reader.IsDBNull(reader.GetOrdinal("StartDate")) ? null : reader.GetDateTime(reader.GetOrdinal("StartDate")),
+                                DueDate = reader.IsDBNull(reader.GetOrdinal("DueDate")) ? null : reader.GetDateTime(reader.GetOrdinal("DueDate")),
+                                StatusName = reader.IsDBNull(reader.GetOrdinal("StatusName")) ? null : reader.GetString(reader.GetOrdinal("StatusName")),
+                                PriorityName = reader.IsDBNull(reader.GetOrdinal("PriorityName")) ? null : reader.GetString(reader.GetOrdinal("PriorityName")),
+                                UserFullName = reader.IsDBNull(reader.GetOrdinal("UserFullName")) ? null : reader.GetString(reader.GetOrdinal("UserFullName")),
+                            };
+
+                            taskDtos.Add(dto);
+                        }
+                    }
+                }
+            }
+            finally
+            {
+                _context.Database.CloseConnection(); // Đóng lại sau khi xong
+            }
+
+            return taskDtos;
+        }
+
     }
 }

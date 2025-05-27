@@ -15,35 +15,65 @@ namespace WinFormsApp
         {
             _taskService = taskService;
             InitializeComponent();
+            LoadFilterDataAsync();
             LoadTasks();
         }
 
         private void LoadTasks()
         {
-            var tasks = _taskService.GetAllTasks()
-                .Select(t => new
-                {
-                    t.TaskId,
-                    t.Title,
-                    StartDate = t.StartDate?.ToString("dd/MM/yyyy"),
-                    DueDate = t.DueDate?.ToString("dd/MM/yyyy"),
-                    Status = t.Status?.StatusName ?? "Không rõ",
-                    Priority = t.Priority?.PriorityName ?? "Không rõ",
-                    AssignedTo = t.User?.FullName ?? "Không có"
-                })
-                .ToList();
+            var taskDtos = _taskService.GetAllTaskDtos();
 
             dgvTasks.DataSource = null;
-            dgvTasks.DataSource = tasks;
+            dgvTasks.DataSource = taskDtos;
 
             dgvTasks.Columns["TaskId"].HeaderText = "Mã";
             dgvTasks.Columns["Title"].HeaderText = "Tiêu đề";
-            dgvTasks.Columns["StartDate"].HeaderText = "Bắt đầu";
-            dgvTasks.Columns["DueDate"].HeaderText = "Hạn chót";
-            dgvTasks.Columns["Status"].HeaderText = "Trạng thái";
-            dgvTasks.Columns["Priority"].HeaderText = "Độ ưu tiên";
-            dgvTasks.Columns["AssignedTo"].HeaderText = "Người thực hiện";
+            dgvTasks.Columns["StartDateStr"].HeaderText = "Bắt đầu";
+            dgvTasks.Columns["DueDateStr"].HeaderText = "Hạn chót";
+            dgvTasks.Columns["StatusName"].HeaderText = "Trạng thái";
+            dgvTasks.Columns["PriorityName"].HeaderText = "Độ ưu tiên";
+            dgvTasks.Columns["UserFullName"].HeaderText = "Người thực hiện";
         }
+
+        private async System.Threading.Tasks.Task LoadFilterDataAsync()
+        {
+            var statuses = await _taskService.GetAllStatuses();
+            var priorities = await _taskService.GetAllPriorities();
+
+            cmbStatus.DisplayMember = "StatusName";
+            cmbStatus.ValueMember = "StatusId";
+            cmbStatus.DataSource = statuses;
+            cmbStatus.SelectedIndex = -1;
+
+            cmbPriority.DisplayMember = "PriorityName";
+            cmbPriority.ValueMember = "PriorityId";
+            cmbPriority.DataSource = priorities;
+            cmbPriority.SelectedIndex = -1;
+        }
+
+
+
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string? title = string.IsNullOrWhiteSpace(txtSearchTitle.Text) ? null : txtSearchTitle.Text;
+            int? statusId = cmbStatus.SelectedItem != null ? (int?)cmbStatus.SelectedValue : null;
+            int? priorityId = cmbPriority.SelectedItem != null ? (int?)cmbPriority.SelectedValue : null;
+
+            var filteredTasks = _taskService.SearchTasks(title, statusId, priorityId);
+
+            dgvTasks.DataSource = null;
+            dgvTasks.DataSource = filteredTasks;
+
+            dgvTasks.Columns["TaskId"].HeaderText = "Mã";
+            dgvTasks.Columns["Title"].HeaderText = "Tiêu đề";
+            dgvTasks.Columns["StartDateStr"].HeaderText = "Bắt đầu";
+            dgvTasks.Columns["DueDateStr"].HeaderText = "Hạn chót";
+            dgvTasks.Columns["StatusName"].HeaderText = "Trạng thái";
+            dgvTasks.Columns["PriorityName"].HeaderText = "Độ ưu tiên";
+            dgvTasks.Columns["UserFullName"].HeaderText = "Người thực hiện";
+        }
+
 
         private int? GetSelectedTaskId()
         {

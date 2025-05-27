@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\WinFormsApp.csproj": {}
+    "C:\\Users\\nhant\\OneDrive\\Desktop\\Winfor\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\WinFormsApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\WinFormsApp.csproj": {
+    "C:\\Users\\nhant\\OneDrive\\Desktop\\Winfor\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\WinFormsApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\WinFormsApp.csproj",
+        "projectUniqueName": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winfor\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\WinFormsApp.csproj",
         "projectName": "WinFormsApp",
-        "projectPath": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\WinFormsApp.csproj",
+        "projectPath": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winfor\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\WinFormsApp.csproj",
         "packagesPath": "C:\\Users\\nhant\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winform\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\obj\\",
+        "outputPath": "C:\\Users\\nhant\\OneDrive\\Desktop\\Winfor\\TaskManagerWinForms\\WinFormsApp\\WinFormsApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\nhant\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -63,6 +63,14 @@
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.5, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[9.0.5, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
               "target": "Package",
               "version": "[9.0.5, )"
             }

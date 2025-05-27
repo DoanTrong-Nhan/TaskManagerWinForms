@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using WinFormsApp.Dtos;
 using WinFormsApp.Models;
 
 namespace WinFormsApp.Repositories
@@ -15,5 +16,9 @@ namespace WinFormsApp.Repositories
         Task<List<Models.TaskStatus>> GetAllStatuses();
         Task<List<TaskPriority>> GetAllPriorities();
         Task<List<User>> GetUsersByRole(int roleId);
+
+        List<Models.Task> GetAllTasksWithDetails();
+
+        List<TaskDto> GetFilteredTasks(string title, int? statusId, int? priorityId);
     }
 }

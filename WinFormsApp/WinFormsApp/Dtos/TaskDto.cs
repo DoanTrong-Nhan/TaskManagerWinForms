@@ -13,9 +13,15 @@ namespace WinFormsApp.Dtos
         public string? Description { get; set; }
         public DateTime? StartDate { get; set; }
         public DateTime? DueDate { get; set; }
+
+        public string? StartDateStr => StartDate?.ToString("dd/MM/yyyy");
+        public string? DueDateStr => DueDate?.ToString("dd/MM/yyyy");
+
         public string? PriorityName { get; set; }
         public string? StatusName { get; set; }
         public string? UserFullName { get; set; }
     }
+
+
 
 }
