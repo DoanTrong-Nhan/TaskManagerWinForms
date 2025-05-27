@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using WinFormsApp.Services; // Ensure this is the correct namespace
-using WinFormsApp.Member; 
+using WinFormsApp.Services;
+using WinFormsApp.Member;
+using WinFormsApp.Dtos; // Đảm bảo DTO được dùng đúng
 
 namespace WinFormsApp
 {
@@ -17,83 +18,67 @@ namespace WinFormsApp
             _taskService = taskService;
             _loggedInUserId = loggedInUserId;
 
-            // Register event handler for DataGridView cell click
             dgvTasks.CellContentClick += dgvTasks_CellContentClick;
         }
 
         private void MemberForm_Load(object sender, EventArgs e)
         {
-            AddDetailButtonColumn(); // Add 'Detail' button column
-            LoadUserTasks(); // Load tasks assigned to the logged-in user
+            ThemCotNutChiTiet();
+            TaiDanhSachCongViecNguoiDung();
         }
 
-        private void AddDetailButtonColumn()
+        private void ThemCotNutChiTiet()
         {
-            // Avoid adding the column multiple times
-            if (dgvTasks.Columns["DetailButton"] == null)
+            if (dgvTasks.Columns["CotChiTiet"] == null)
             {
-                var detailButton = new DataGridViewButtonColumn
+                var cotChiTiet = new DataGridViewButtonColumn
                 {
-                    Name = "DetailButton",
+                    Name = "CotChiTiet",
                     HeaderText = "Chi tiết",
                     Text = "Xem",
                     UseColumnTextForButtonValue = true
                 };
-                dgvTasks.Columns.Add(detailButton);
+                dgvTasks.Columns.Add(cotChiTiet);
             }
         }
 
-        private void LoadUserTasks()
+        private void TaiDanhSachCongViecNguoiDung()
         {
-            // Retrieve tasks for the logged-in user
-            var tasks = _taskService.GetTasksByUserId(_loggedInUserId);
-            dgvTasks.DataSource = tasks;
+            var danhSachCongViec = _taskService.GetTasksByUserId(_loggedInUserId);
+            dgvTasks.DataSource = danhSachCongViec;
 
-            // Ensure 'Detail' button is always at the end
-            if (dgvTasks.Columns["DetailButton"] != null)
-                dgvTasks.Columns["DetailButton"].DisplayIndex = dgvTasks.Columns.Count - 1;
+            if (dgvTasks.Columns["CotChiTiet"] != null)
+                dgvTasks.Columns["CotChiTiet"].DisplayIndex = dgvTasks.Columns.Count - 1;
         }
 
         private void dgvTasks_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-                // Ensure the click is within valid data area
                 if (e.RowIndex < 0 || e.ColumnIndex < 0)
                     return;
 
-                // Check if the clicked column is 'DetailButton'
-                if (dgvTasks.Columns[e.ColumnIndex].Name != "DetailButton")
+                if (dgvTasks.Columns[e.ColumnIndex].Name != "CotChiTiet")
                     return;
 
-                // Ensure "TaskId" column exists
-                if (!dgvTasks.Columns.Contains("TaskId"))
+                // Lấy TaskId thông qua binding object (an toàn hơn)
+                if (dgvTasks.Rows[e.RowIndex].DataBoundItem is not TaskDto congViec)
                 {
-                    MessageBox.Show("Không tìm thấy cột TaskId trong lưới dữ liệu.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Không thể xác định công việc từ dòng được chọn.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
-                // Retrieve TaskId from the clicked row
-                var cellValue = dgvTasks.Rows[e.RowIndex].Cells["TaskId"]?.Value?.ToString();
-                if (!int.TryParse(cellValue, out int taskId))
-                {
-                    MessageBox.Show("ID công việc không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                // Retrieve the task details using the service
-                var task = _taskService.GetDtoById(taskId);
-                if (task == null)
+                var congViecChiTiet = _taskService.GetDtoById(congViec.TaskId);
+                if (congViecChiTiet == null)
                 {
                     MessageBox.Show("Không tìm thấy công việc.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
-                // Create the TaskDetailForm through DI
-                var form = new TaskDetailForm(task, _taskService);  // Ensure task is passed correctly
-                if (form.ShowDialog() == DialogResult.OK)
+                var formChiTiet = new TaskDetailForm(congViecChiTiet, _taskService);
+                if (formChiTiet.ShowDialog() == DialogResult.OK)
                 {
-                    LoadUserTasks(); // Refresh the task list after closing detail form
+                    TaiDanhSachCongViecNguoiDung();
                 }
             }
             catch (Exception ex)
@@ -101,6 +86,5 @@ namespace WinFormsApp
                 MessageBox.Show($"Đã xảy ra lỗi khi hiển thị chi tiết công việc:\n{ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
     }
 }

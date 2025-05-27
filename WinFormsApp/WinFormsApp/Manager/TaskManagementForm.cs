@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
+using WinFormsApp.Dtos;
 using WinFormsApp.Manager;
 using WinFormsApp.Models;
 using WinFormsApp.Services;
@@ -26,13 +27,7 @@ namespace WinFormsApp
             dgvTasks.DataSource = null;
             dgvTasks.DataSource = taskDtos;
 
-            dgvTasks.Columns["TaskId"].HeaderText = "Mã";
-            dgvTasks.Columns["Title"].HeaderText = "Tiêu đề";
-            dgvTasks.Columns["StartDateStr"].HeaderText = "Bắt đầu";
-            dgvTasks.Columns["DueDateStr"].HeaderText = "Hạn chót";
-            dgvTasks.Columns["StatusName"].HeaderText = "Trạng thái";
-            dgvTasks.Columns["PriorityName"].HeaderText = "Độ ưu tiên";
-            dgvTasks.Columns["UserFullName"].HeaderText = "Người thực hiện";
+            SetTaskGridHeaders();
         }
 
         private async System.Threading.Tasks.Task LoadFilterDataAsync()
@@ -65,22 +60,16 @@ namespace WinFormsApp
             dgvTasks.DataSource = null;
             dgvTasks.DataSource = filteredTasks;
 
-            dgvTasks.Columns["TaskId"].HeaderText = "Mã";
-            dgvTasks.Columns["Title"].HeaderText = "Tiêu đề";
-            dgvTasks.Columns["StartDateStr"].HeaderText = "Bắt đầu";
-            dgvTasks.Columns["DueDateStr"].HeaderText = "Hạn chót";
-            dgvTasks.Columns["StatusName"].HeaderText = "Trạng thái";
-            dgvTasks.Columns["PriorityName"].HeaderText = "Độ ưu tiên";
-            dgvTasks.Columns["UserFullName"].HeaderText = "Người thực hiện";
+            SetTaskGridHeaders();
         }
-
 
         private int? GetSelectedTaskId()
         {
-            if (dgvTasks.CurrentRow?.Cells["TaskId"].Value is int id)
-                return id;
+            if (dgvTasks.CurrentRow?.DataBoundItem is TaskDto task)
+                return task.TaskId;
             return null;
         }
+
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -135,5 +124,27 @@ namespace WinFormsApp
                 MessageBoxIcon.Information
             );
         }
+
+        private void SetTaskGridHeaders()
+        {
+            dgvTasks.AutoGenerateColumns = false;
+
+            dgvTasks.Columns.Clear();
+            dgvTasks.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "TaskId", // thêm dòng này
+                DataPropertyName = "TaskId",
+                HeaderText = "Mã"
+            });
+
+            dgvTasks.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Title", HeaderText = "Tiêu đề" });
+            dgvTasks.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "StartDateStr", HeaderText = "Bắt đầu" });
+            dgvTasks.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "DueDateStr", HeaderText = "Hạn chót" });
+            dgvTasks.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "StatusName", HeaderText = "Trạng thái" });
+            dgvTasks.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "PriorityName", HeaderText = "Độ ưu tiên" });
+            dgvTasks.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "UserFullName", HeaderText = "Người thực hiện" });
+
+        }
+
     }
 }
