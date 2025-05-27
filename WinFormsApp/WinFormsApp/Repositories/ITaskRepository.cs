@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using WinFormsApp.Dtos;
 using WinFormsApp.Models;
 
@@ -6,19 +7,26 @@ namespace WinFormsApp.Repositories
 {
     public interface ITaskRepository
     {
-        List<Models.Task> GetAllTasks();
-        Models.Task? GetTaskById(int id);
+        // CRUD
+        List<Models.Task> GetAll();
+        Models.Task? GetById(int id);
         void Add(Models.Task task);
         void Update(Models.Task task);
         void Delete(int id);
         void Save();
 
-        Task<List<Models.TaskStatus>> GetAllStatuses();
-        Task<List<TaskPriority>> GetAllPriorities();
-        Task<List<User>> GetUsersByRole(int roleId);
+        // Lookup
+        Task<List<Models.TaskStatus>> GetAllStatusesAsync();
+        Task<List<TaskPriority>> GetAllPrioritiesAsync();
+        Task<List<User>> GetUsersByRoleAsync(int roleId);
 
-        List<Models.Task> GetAllTasksWithDetails();
+        // DTO
+        List<TaskDto> GetAllWithDetails();
+        List<TaskDto> GetFilteredTasks(string? title, int? statusId, int? priorityId);
+        List<TaskDto> GetByUserId(int userId);
+        TaskDto? GetDtoById(int taskId);
 
-        List<TaskDto> GetFilteredTasks(string title, int? statusId, int? priorityId);
+        // Custom Updates
+        void UpdateStatus(int taskId, int statusId);
     }
 }

@@ -3,36 +3,28 @@
     partial class TaskDetailForm
     {
         private System.ComponentModel.IContainer components = null;
-
-        private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.TextBox txtTitle;
-
-        private System.Windows.Forms.Label lblDescription;
-        private System.Windows.Forms.TextBox txtDescription;
-
-        private System.Windows.Forms.Label lblStartDate;
-        private System.Windows.Forms.DateTimePicker dtpStart;
-
-        private System.Windows.Forms.Label lblDueDate;
-        private System.Windows.Forms.DateTimePicker dtpDue;
-
-        private System.Windows.Forms.Label lblStatus;
-        private System.Windows.Forms.ComboBox cboStatus;
-
-        private System.Windows.Forms.Label lblPriority;
-        private System.Windows.Forms.ComboBox cboPriority;
-
-        private System.Windows.Forms.Label lblUser;
-        private System.Windows.Forms.ComboBox cboUser;
-
-        private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Button btnCancel;
+        private TableLayoutPanel tableLayoutPanel;
+        private Label lblTitle;
+        private TextBox txtTitle;
+        private Label lblDescription;
+        private TextBox txtDescription;
+        private Label lblStartDate;
+        private DateTimePicker dtpStart;
+        private Label lblDueDate;
+        private DateTimePicker dtpDue;
+        private Label lblStatus;
+        private ComboBox cboStatus;
+        private Label lblPriority;
+        private ComboBox cboPriority;
+        private Label lblUser;
+        private ComboBox cboUser;
+        private Button btnSave;
+        private Button btnCancel;
 
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
                 components.Dispose();
-
             base.Dispose(disposing);
         }
 
@@ -40,164 +32,215 @@
 
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.lblTitle = new System.Windows.Forms.Label();
-            this.txtTitle = new System.Windows.Forms.TextBox();
-            this.lblDescription = new System.Windows.Forms.Label();
-            this.txtDescription = new System.Windows.Forms.TextBox();
-            this.lblStartDate = new System.Windows.Forms.Label();
-            this.dtpStart = new System.Windows.Forms.DateTimePicker();
-            this.lblDueDate = new System.Windows.Forms.Label();
-            this.dtpDue = new System.Windows.Forms.DateTimePicker();
-            this.lblStatus = new System.Windows.Forms.Label();
-            this.cboStatus = new System.Windows.Forms.ComboBox();
-            this.lblPriority = new System.Windows.Forms.Label();
-            this.cboPriority = new System.Windows.Forms.ComboBox();
-            this.lblUser = new System.Windows.Forms.Label();
-            this.cboUser = new System.Windows.Forms.ComboBox();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-
-            this.SuspendLayout();
-
+            tableLayoutPanel = new TableLayoutPanel();
+            lblTitle = new Label();
+            txtTitle = new TextBox();
+            lblDescription = new Label();
+            txtDescription = new TextBox();
+            lblStartDate = new Label();
+            dtpStart = new DateTimePicker();
+            lblDueDate = new Label();
+            dtpDue = new DateTimePicker();
+            lblStatus = new Label();
+            cboStatus = new ComboBox();
+            lblPriority = new Label();
+            cboPriority = new ComboBox();
+            lblUser = new Label();
+            cboUser = new ComboBox();
+            btnSave = new Button();
+            btnCancel = new Button();
+            tableLayoutPanel.SuspendLayout();
+            SuspendLayout();
+            // 
+            // tableLayoutPanel
+            // 
+            tableLayoutPanel.ColumnCount = 2;
+            tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30F));
+            tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 70F));
+            tableLayoutPanel.Controls.Add(lblTitle, 0, 0);
+            tableLayoutPanel.Controls.Add(txtTitle, 1, 0);
+            tableLayoutPanel.Controls.Add(lblDescription, 0, 1);
+            tableLayoutPanel.Controls.Add(txtDescription, 1, 1);
+            tableLayoutPanel.Controls.Add(lblStartDate, 0, 2);
+            tableLayoutPanel.Controls.Add(dtpStart, 1, 2);
+            tableLayoutPanel.Controls.Add(lblDueDate, 0, 3);
+            tableLayoutPanel.Controls.Add(dtpDue, 1, 3);
+            tableLayoutPanel.Controls.Add(lblStatus, 0, 4);
+            tableLayoutPanel.Controls.Add(cboStatus, 1, 4);
+            tableLayoutPanel.Controls.Add(lblPriority, 0, 5);
+            tableLayoutPanel.Controls.Add(cboPriority, 1, 5);
+            tableLayoutPanel.Controls.Add(lblUser, 0, 6);
+            tableLayoutPanel.Controls.Add(cboUser, 1, 6);
+            tableLayoutPanel.Controls.Add(btnSave, 0, 7);
+            tableLayoutPanel.Controls.Add(btnCancel, 1, 7);
+            tableLayoutPanel.Dock = DockStyle.Fill;
+            tableLayoutPanel.Location = new Point(0, 0);
+            tableLayoutPanel.Name = "tableLayoutPanel";
+            tableLayoutPanel.RowCount = 8;
+            tableLayoutPanel.RowStyles.Add(new RowStyle());
+            tableLayoutPanel.RowStyles.Add(new RowStyle());
+            tableLayoutPanel.RowStyles.Add(new RowStyle());
+            tableLayoutPanel.RowStyles.Add(new RowStyle());
+            tableLayoutPanel.RowStyles.Add(new RowStyle());
+            tableLayoutPanel.RowStyles.Add(new RowStyle());
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle());
+            tableLayoutPanel.Size = new Size(828, 431);
+            tableLayoutPanel.TabIndex = 0;
             // 
             // lblTitle
             // 
-            this.lblTitle.Location = new System.Drawing.Point(30, 20);
-            this.lblTitle.Text = "Tiêu đề:";
-            this.lblTitle.AutoSize = true;
-
+            lblTitle.Dock = DockStyle.Fill;
+            lblTitle.Location = new Point(3, 0);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(242, 37);
+            lblTitle.TabIndex = 0;
+            lblTitle.Text = "Tiêu đề:";
             // 
             // txtTitle
             // 
-            this.txtTitle.Location = new System.Drawing.Point(150, 20);
-            this.txtTitle.Size = new System.Drawing.Size(300, 23);
-
+            txtTitle.Dock = DockStyle.Fill;
+            txtTitle.Location = new Point(251, 3);
+            txtTitle.Name = "txtTitle";
+            txtTitle.Size = new Size(574, 31);
+            txtTitle.TabIndex = 1;
             // 
             // lblDescription
             // 
-            this.lblDescription.Location = new System.Drawing.Point(30, 60);
-            this.lblDescription.Text = "Mô tả:";
-            this.lblDescription.AutoSize = true;
-
+            lblDescription.Dock = DockStyle.Fill;
+            lblDescription.Location = new Point(3, 37);
+            lblDescription.Name = "lblDescription";
+            lblDescription.Size = new Size(242, 37);
+            lblDescription.TabIndex = 2;
+            lblDescription.Text = "Mô tả:";
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(150, 60);
-            this.txtDescription.Size = new System.Drawing.Size(300, 60);
-            this.txtDescription.Multiline = true;
-
+            txtDescription.Dock = DockStyle.Fill;
+            txtDescription.Location = new Point(251, 40);
+            txtDescription.Multiline = true;
+            txtDescription.Name = "txtDescription";
+            txtDescription.Size = new Size(574, 31);
+            txtDescription.TabIndex = 3;
             // 
             // lblStartDate
             // 
-            this.lblStartDate.Location = new System.Drawing.Point(30, 140);
-            this.lblStartDate.Text = "Ngày bắt đầu:";
-            this.lblStartDate.AutoSize = true;
-
+            lblStartDate.Dock = DockStyle.Fill;
+            lblStartDate.Location = new Point(3, 74);
+            lblStartDate.Name = "lblStartDate";
+            lblStartDate.Size = new Size(242, 37);
+            lblStartDate.TabIndex = 4;
+            lblStartDate.Text = "Ngày bắt đầu:";
             // 
             // dtpStart
             // 
-            this.dtpStart.Location = new System.Drawing.Point(150, 140);
-            this.dtpStart.Size = new System.Drawing.Size(200, 23);
-
+            dtpStart.Dock = DockStyle.Fill;
+            dtpStart.Location = new Point(251, 77);
+            dtpStart.Name = "dtpStart";
+            dtpStart.Size = new Size(574, 31);
+            dtpStart.TabIndex = 5;
             // 
             // lblDueDate
             // 
-            this.lblDueDate.Location = new System.Drawing.Point(30, 180);
-            this.lblDueDate.Text = "Hạn chót:";
-            this.lblDueDate.AutoSize = true;
-
+            lblDueDate.Dock = DockStyle.Fill;
+            lblDueDate.Location = new Point(3, 111);
+            lblDueDate.Name = "lblDueDate";
+            lblDueDate.Size = new Size(242, 37);
+            lblDueDate.TabIndex = 6;
+            lblDueDate.Text = "Hạn chót:";
             // 
             // dtpDue
             // 
-            this.dtpDue.Location = new System.Drawing.Point(150, 180);
-            this.dtpDue.Size = new System.Drawing.Size(200, 23);
-
+            dtpDue.Dock = DockStyle.Fill;
+            dtpDue.Location = new Point(251, 114);
+            dtpDue.Name = "dtpDue";
+            dtpDue.Size = new Size(574, 31);
+            dtpDue.TabIndex = 7;
             // 
             // lblStatus
             // 
-            this.lblStatus.Location = new System.Drawing.Point(30, 220);
-            this.lblStatus.Text = "Trạng thái:";
-            this.lblStatus.AutoSize = true;
-
+            lblStatus.Dock = DockStyle.Fill;
+            lblStatus.Location = new Point(3, 148);
+            lblStatus.Name = "lblStatus";
+            lblStatus.Size = new Size(242, 39);
+            lblStatus.TabIndex = 8;
+            lblStatus.Text = "Trạng thái:";
             // 
             // cboStatus
             // 
-            this.cboStatus.Location = new System.Drawing.Point(150, 220);
-            this.cboStatus.Size = new System.Drawing.Size(200, 23);
-            this.cboStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-
+            cboStatus.Dock = DockStyle.Fill;
+            cboStatus.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboStatus.Location = new Point(251, 151);
+            cboStatus.Name = "cboStatus";
+            cboStatus.Size = new Size(574, 33);
+            cboStatus.TabIndex = 9;
             // 
             // lblPriority
             // 
-            this.lblPriority.Location = new System.Drawing.Point(30, 260);
-            this.lblPriority.Text = "Độ ưu tiên:";
-            this.lblPriority.AutoSize = true;
-
+            lblPriority.Dock = DockStyle.Fill;
+            lblPriority.Location = new Point(3, 187);
+            lblPriority.Name = "lblPriority";
+            lblPriority.Size = new Size(242, 39);
+            lblPriority.TabIndex = 10;
+            lblPriority.Text = "Độ ưu tiên:";
             // 
             // cboPriority
             // 
-            this.cboPriority.Location = new System.Drawing.Point(150, 260);
-            this.cboPriority.Size = new System.Drawing.Size(200, 23);
-            this.cboPriority.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-
+            cboPriority.Dock = DockStyle.Fill;
+            cboPriority.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboPriority.Location = new Point(251, 190);
+            cboPriority.Name = "cboPriority";
+            cboPriority.Size = new Size(574, 33);
+            cboPriority.TabIndex = 11;
             // 
             // lblUser
             // 
-            this.lblUser.Location = new System.Drawing.Point(30, 300);
-            this.lblUser.Text = "Người thực hiện:";
-            this.lblUser.AutoSize = true;
-
+            lblUser.Dock = DockStyle.Fill;
+            lblUser.Location = new Point(3, 226);
+            lblUser.Name = "lblUser";
+            lblUser.Size = new Size(242, 176);
+            lblUser.TabIndex = 12;
+            lblUser.Text = "Người thực hiện:";
             // 
             // cboUser
             // 
-            this.cboUser.Location = new System.Drawing.Point(150, 300);
-            this.cboUser.Size = new System.Drawing.Size(200, 23);
-            this.cboUser.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-
+            cboUser.Dock = DockStyle.Fill;
+            cboUser.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboUser.Location = new Point(251, 229);
+            cboUser.Name = "cboUser";
+            cboUser.Size = new Size(574, 33);
+            cboUser.TabIndex = 13;
             // 
             // btnSave
             // 
-            this.btnSave.Text = "Lưu";
-            this.btnSave.Location = new System.Drawing.Point(150, 350);
-            this.btnSave.Size = new System.Drawing.Size(100, 35);
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-
+            btnSave.Dock = DockStyle.Fill;
+            btnSave.Location = new Point(3, 405);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(242, 23);
+            btnSave.TabIndex = 14;
+            btnSave.Text = "Lưu";
+            btnSave.Click += btnSave_Click;
             // 
             // btnCancel
             // 
-            this.btnCancel.Text = "Huỷ";
-            this.btnCancel.Location = new System.Drawing.Point(260, 350);
-            this.btnCancel.Size = new System.Drawing.Size(100, 35);
-            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-
+            btnCancel.DialogResult = DialogResult.Cancel;
+            btnCancel.Dock = DockStyle.Fill;
+            btnCancel.Location = new Point(251, 405);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(574, 23);
+            btnCancel.TabIndex = 15;
+            btnCancel.Text = "Huỷ";
             // 
             // TaskDetailForm
             // 
-            this.ClientSize = new System.Drawing.Size(500, 420);
-            this.Controls.Add(this.lblTitle);
-            this.Controls.Add(this.txtTitle);
-            this.Controls.Add(this.lblDescription);
-            this.Controls.Add(this.txtDescription);
-            this.Controls.Add(this.lblStartDate);
-            this.Controls.Add(this.dtpStart);
-            this.Controls.Add(this.lblDueDate);
-            this.Controls.Add(this.dtpDue);
-            this.Controls.Add(this.lblStatus);
-            this.Controls.Add(this.cboStatus);
-            this.Controls.Add(this.lblPriority);
-            this.Controls.Add(this.cboPriority);
-            this.Controls.Add(this.lblUser);
-            this.Controls.Add(this.cboUser);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.btnCancel);
-            this.Text = "Thông tin công việc";
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            ClientSize = new Size(828, 431);
+            Controls.Add(tableLayoutPanel);
+            Name = "TaskDetailForm";
+            StartPosition = FormStartPosition.CenterParent;
+            Text = "Thông tin công việc";
+            tableLayoutPanel.ResumeLayout(false);
+            tableLayoutPanel.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion

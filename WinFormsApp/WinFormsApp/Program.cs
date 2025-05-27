@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using WinFormsApp.Models;
 using WinFormsApp.Repositories;
 using WinFormsApp.Services;
+using WinFormsApp.Manager;
 
 namespace WinFormsApp
 {
@@ -40,6 +41,8 @@ namespace WinFormsApp
             services.AddTransient<MemberForm>();
             services.AddTransient<Register>();
             services.AddTransient<TaskManagementForm>();
+            services.AddTransient<TaskDetailForm>(); 
+
 
             // Tạo service provider
             var serviceProvider = services.BuildServiceProvider();
