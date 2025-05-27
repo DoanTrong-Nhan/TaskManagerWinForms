@@ -94,26 +94,25 @@ namespace WinFormsApp.Repositories
         {
             return await _context.Users.Where(u => u.RoleId == roleId).ToListAsync();
         }
-
         public List<TaskDto> GetFilteredTasks(string? title, int? statusId, int? priorityId)
         {
             var taskDtos = new List<TaskDto>();
 
-            using (var conn = _context.Database.GetDbConnection())
+            var connection = _context.Database.GetDbConnection();
+
+            try
             {
-                if (conn.State != System.Data.ConnectionState.Open)
-                    conn.Open();
-
-                using (var cmd = conn.CreateCommand())
+                _context.Database.OpenConnection(); // Mở kết nối an toàn
+                using (var command = connection.CreateCommand())
                 {
-                    cmd.CommandText = "sp_FilterTasks";
-                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    command.CommandText = "sp_FilterTasks";
+                    command.CommandType = System.Data.CommandType.StoredProcedure;
 
-                    cmd.Parameters.Add(new SqlParameter("@Title", title ?? (object)DBNull.Value));
-                    cmd.Parameters.Add(new SqlParameter("@StatusId", statusId ?? (object)DBNull.Value));
-                    cmd.Parameters.Add(new SqlParameter("@PriorityId", priorityId ?? (object)DBNull.Value));
+                    command.Parameters.Add(new SqlParameter("@Title", title ?? (object)DBNull.Value));
+                    command.Parameters.Add(new SqlParameter("@StatusId", statusId ?? (object)DBNull.Value));
+                    command.Parameters.Add(new SqlParameter("@PriorityId", priorityId ?? (object)DBNull.Value));
 
-                    using (var reader = cmd.ExecuteReader())
+                    using (var reader = command.ExecuteReader())
                     {
                         while (reader.Read())
                         {
@@ -134,8 +133,13 @@ namespace WinFormsApp.Repositories
                     }
                 }
             }
+            finally
+            {
+                _context.Database.CloseConnection(); // Đóng lại sau khi xong
+            }
 
             return taskDtos;
         }
+
     }
 }
