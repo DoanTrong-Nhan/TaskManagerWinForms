@@ -28,6 +28,9 @@
     <Compile Update="Member\MemberForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Member\TaskDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Register.cs">
       <SubType>Form</SubType>
     </Compile>

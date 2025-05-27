@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using WinFormsApp.Dtos;
 using WinFormsApp.Models;
@@ -10,24 +7,20 @@ namespace WinFormsApp.Services
 {
     public interface ITaskService
     {
-        List<Models.Task> GetAllTasks();
-        Models.Task? GetTaskById(int id);
-        void CreateTask(Models.Task task);
-        void UpdateTask(Models.Task task);
-        void DeleteTask(int id);
+        List<Models.Task> GetAll();
+        Models.Task? GetById(int id);
+        void Create(Models. Task task);
+        void Update(Models.Task task);
+        void Delete(int id);
 
-        Task<List<Models.TaskStatus>> GetAllStatuses();
-        Task<List<TaskPriority>> GetAllPriorities();
-        Task<List<User>> GetUsersByRole(int roleId);
+        Task<List<Models.TaskStatus>> GetAllStatusesAsync();
+        Task<List<TaskPriority>> GetAllPrioritiesAsync();
+        Task<List<User>> GetUsersByRoleAsync(int roleId);
 
-        List<TaskDto> GetAllTaskDtos();
-
-        public List<TaskDto> SearchTasks(string? title, int? statusId, int? priorityId);
-
+        List<TaskDto> GetAllDtos();
+        List<TaskDto> GetFilteredTasks(string? title, int? statusId, int? priorityId);
         List<TaskDto> GetTasksByUserId(int userId);
-
-
-
+        TaskDto? GetDtoById(int taskId);
+        void UpdateStatus(int taskId, int statusId);
     }
-
 }

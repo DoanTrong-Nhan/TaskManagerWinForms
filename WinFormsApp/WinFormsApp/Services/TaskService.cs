@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using WinFormsApp.Dtos;
 using WinFormsApp.Models;
@@ -18,120 +17,51 @@ namespace WinFormsApp.Services
             _repository = repository;
         }
 
-        public List<Models.Task> GetAllTasks()
+        public List<Models.Task> GetAll() => _repository.GetAll();
+
+        public Models.Task? GetById(int id) => _repository.GetById(id);
+
+        public void Create(Models.Task task)
         {
-            try
-            {
-                return _repository.GetAllTasks();  // Fetches all tasks
-            }
-            catch (Exception ex)
-            {
-                throw new InvalidOperationException("Error retrieving tasks.", ex);
-            }
+            if (task == null) throw new ArgumentNullException(nameof(task));
+            _repository.Add(task);
+            _repository.Save();
         }
 
-        public List<TaskDto> GetAllTaskDtos()
+        public void Update(Models.Task task)
         {
-            var tasks = _repository.GetAllTasksWithDetails();
-
-            return tasks.Select(t => new TaskDto
-            {
-                TaskId = t.TaskId,
-                Title = t.Title,
-                Description = t.Description,
-                StartDate = t.StartDate,
-                DueDate = t.DueDate,
-                PriorityName = t.Priority?.PriorityName,
-                StatusName = t.Status?.StatusName,
-                UserFullName = t.User?.FullName
-            }).ToList();
+            if (task == null) throw new ArgumentNullException(nameof(task));
+            _repository.Update(task);
+            _repository.Save();
         }
 
-
-        public Models.Task? GetTaskById(int id)
+        public void Delete(int id)
         {
-            try
-            {
-                return _repository.GetTaskById(id);  // Fetches a task by ID
-            }
-            catch (Exception ex)
-            {
-                throw new InvalidOperationException($"Error retrieving task with ID {id}.", ex);
-            }
+            _repository.Delete(id);
+            _repository.Save();
         }
 
-        public void CreateTask(Models.Task task)
-        {
-            if (task == null)
-                throw new ArgumentNullException(nameof(task), "Task cannot be null.");
+        public async Task<List<Models.TaskStatus>> GetAllStatusesAsync() =>
+            await _repository.GetAllStatusesAsync();
 
-            try
-            {
-                _repository.Add(task);  // Adds task to the repository
-                _repository.Save();  // Commits to the database
-            }
-            catch (Exception ex)
-            {
-                throw new InvalidOperationException("Error creating task.", ex);
-            }
-        }
+        public async Task<List<TaskPriority>> GetAllPrioritiesAsync() =>
+            await _repository.GetAllPrioritiesAsync();
 
-        public void UpdateTask(Models.Task task)
-        {
-            if (task == null)
-                throw new ArgumentNullException(nameof(task), "Task cannot be null.");
+        public async Task<List<User>> GetUsersByRoleAsync(int roleId) =>
+            await _repository.GetUsersByRoleAsync(roleId);
 
-            try
-            {
-                _repository.Update(task);  // Updates task in the repository
-                _repository.Save();  // Commits to the database
-            }
-            catch (Exception ex)
-            {
-                throw new InvalidOperationException("Error updating task.", ex);
-            }
-        }
+        public List<TaskDto> GetAllDtos() => _repository.GetAllWithDetails();
 
-        public void DeleteTask(int id)
-        {
-            try
-            {
-                _repository.Delete(id);  // Deletes task from the repository
-                _repository.Save();  // Commits to the database
-            }
-            catch (Exception ex)
-            {
-                throw new InvalidOperationException("Error deleting task.", ex);
-            }
-        }
+        public List<TaskDto> GetFilteredTasks(string? title, int? statusId, int? priorityId) =>
+            _repository.GetFilteredTasks(title, statusId, priorityId);
 
-        // Lấy tất cả trạng thái công việc (asynchronous)
-        public async Task<List<Models.TaskStatus>> GetAllStatuses()
-        {
-            return await _repository.GetAllStatuses();
-        }
+        public List<TaskDto> GetTasksByUserId(int userId) =>
+            _repository.GetByUserId(userId);
 
-        // Lấy tất cả mức độ ưu tiên (asynchronous)
-        public async Task<List<TaskPriority>> GetAllPriorities()
-        {
-            return await _repository.GetAllPriorities();
-        }
+        public TaskDto? GetDtoById(int taskId) =>
+            _repository.GetDtoById(taskId);
 
-        // Lấy người dùng theo RoleId (asynchronous)
-        public async Task<List<User>> GetUsersByRole(int roleId)
-        {
-            return await _repository.GetUsersByRole(roleId);
-        }
-
-        public List<TaskDto> SearchTasks(string? title, int? statusId, int? priorityId)
-        {
-            return _repository.GetFilteredTasks(title, statusId, priorityId);
-        }
-
-        public List<TaskDto> GetTasksByUserId(int userId)
-        {
-            return _repository.GetTasksByUserId(userId);
-        }
-
+        public void UpdateStatus(int taskId, int statusId) =>
+            _repository.UpdateStatus(taskId, statusId);
     }
 }

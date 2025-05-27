@@ -17,15 +17,8 @@ namespace WinFormsApp.Repositories
             _context = context;
         }
 
-        public List<Models.Task> GetAllTasks()
-        {
-            return _context.Tasks
-                .Include(t => t.Priority)  // Eager loading for related entities
-                .Include(t => t.Status)
-                .Include(t => t.User)
-                .ToList();  // Fetches the tasks with their related data
-        }
-        public List<Models.Task> GetAllTasksWithDetails()
+        // CRUD
+        public List<Models.Task> GetAll()
         {
             return _context.Tasks
                 .Include(t => t.Priority)
@@ -34,66 +27,81 @@ namespace WinFormsApp.Repositories
                 .ToList();
         }
 
-        public Models.Task? GetTaskById(int id)
+        public Models.Task? GetById(int id)
         {
             return _context.Tasks
                 .Include(t => t.Priority)
                 .Include(t => t.Status)
                 .Include(t => t.User)
-                .FirstOrDefault(t => t.TaskId == id);  // Fetches task by ID
+                .FirstOrDefault(t => t.TaskId == id);
         }
 
         public void Add(Models.Task task)
         {
-            if (task == null)
-                throw new ArgumentNullException(nameof(task));
-
-            _context.Tasks.Add(task);  // Adds task to the DbSet
+            if (task == null) throw new ArgumentNullException(nameof(task));
+            _context.Tasks.Add(task);
         }
 
         public void Update(Models.Task task)
         {
-            if (task == null)
-                throw new ArgumentNullException(nameof(task));
-
-            _context.Tasks.Update(task);  // Updates the task in the DbSet
+            if (task == null) throw new ArgumentNullException(nameof(task));
+            _context.Tasks.Update(task);
         }
 
         public void Delete(int id)
         {
-            var task = _context.Tasks.Find(id);  // Finds the task by ID
-            if (task != null)
-                _context.Tasks.Remove(task);  // Removes the task from the DbSet
+            var task = _context.Tasks.Find(id);
+            if (task != null) _context.Tasks.Remove(task);
         }
 
         public void Save()
         {
             try
             {
-                _context.SaveChanges();  // Commits changes to the database
+                _context.SaveChanges();
             }
             catch (Exception ex)
             {
-                throw new InvalidOperationException("Error while saving changes to the database.", ex);
+                throw new InvalidOperationException("Error saving changes to database.", ex);
             }
         }
-        // Phương thức bất đồng bộ để lấy tất cả trạng thái công việc
-        public async Task<List<Models.TaskStatus>> GetAllStatuses()
+
+        // Lookup
+        public async Task<List<Models.TaskStatus>> GetAllStatusesAsync()
         {
             return await _context.TaskStatuses.ToListAsync();
         }
 
-        // Phương thức bất đồng bộ để lấy tất cả mức độ ưu tiên
-        public async Task<List<TaskPriority>> GetAllPriorities()
+        public async Task<List<TaskPriority>> GetAllPrioritiesAsync()
         {
             return await _context.TaskPriorities.ToListAsync();
         }
 
-        // Phương thức bất đồng bộ để lấy người dùng theo RoleId
-        public async Task<List<User>> GetUsersByRole(int roleId)
+        public async Task<List<User>> GetUsersByRoleAsync(int roleId)
         {
             return await _context.Users.Where(u => u.RoleId == roleId).ToListAsync();
         }
+
+        // DTO Queries
+        public List<TaskDto> GetAllWithDetails()
+        {
+            return _context.Tasks
+                .Include(t => t.Priority)
+                .Include(t => t.Status)
+                .Include(t => t.User)
+                .Select(t => new TaskDto
+                {
+                    TaskId = t.TaskId,
+                    Title = t.Title,
+                    Description = t.Description,
+                    StartDate = t.StartDate,
+                    DueDate = t.DueDate,
+                    PriorityName = t.Priority!.PriorityName,
+                    StatusName = t.Status!.StatusName,
+                    UserFullName = t.User!.FullName
+                }).ToList();
+        }
+
         public List<TaskDto> GetFilteredTasks(string? title, int? statusId, int? priorityId)
         {
             var taskDtos = new List<TaskDto>();
@@ -141,48 +149,64 @@ namespace WinFormsApp.Repositories
             return taskDtos;
         }
 
-
-        //
-        public List<TaskDto> GetTasksByUserId(int userId)
+        public List<TaskDto> GetByUserId(int userId)
         {
             var result = new List<TaskDto>();
 
-            using (var conn = _context.Database.GetDbConnection())
+            using var conn = _context.Database.GetDbConnection();
+            if (conn.State != ConnectionState.Open) conn.Open();
+
+            using var cmd = conn.CreateCommand();
+            cmd.CommandText = "sp_GetTasksByUserId";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add(new SqlParameter("@UserId", userId));
+
+            using var reader = cmd.ExecuteReader();
+            while (reader.Read())
             {
-                if (conn.State != ConnectionState.Open)
-                    conn.Open();
-
-                using (var cmd = conn.CreateCommand())
+                result.Add(new TaskDto
                 {
-                    cmd.CommandText = "sp_GetTasksByUserId";
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add(new SqlParameter("@UserId", userId));
-
-                    using (var reader = cmd.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            var dto = new TaskDto
-                            {
-                                TaskId = reader.GetInt32(reader.GetOrdinal("TaskId")),
-                                Title = reader.GetString(reader.GetOrdinal("Title")),
-                                Description = reader.IsDBNull(reader.GetOrdinal("Description")) ? null : reader.GetString(reader.GetOrdinal("Description")),
-                                StartDate = reader.IsDBNull(reader.GetOrdinal("StartDate")) ? null : reader.GetDateTime(reader.GetOrdinal("StartDate")),
-                                DueDate = reader.IsDBNull(reader.GetOrdinal("DueDate")) ? null : reader.GetDateTime(reader.GetOrdinal("DueDate")),
-                                StatusName = reader.IsDBNull(reader.GetOrdinal("StatusName")) ? null : reader.GetString(reader.GetOrdinal("StatusName")),
-                                PriorityName = reader.IsDBNull(reader.GetOrdinal("PriorityName")) ? null : reader.GetString(reader.GetOrdinal("PriorityName")),
-                                UserFullName = reader.IsDBNull(reader.GetOrdinal("UserFullName")) ? null : reader.GetString(reader.GetOrdinal("UserFullName"))
-                            };
-
-                            result.Add(dto);
-                        }
-                    }
-                }
+                    TaskId = reader.GetInt32(reader.GetOrdinal("TaskId")),
+                    Title = reader.GetString(reader.GetOrdinal("Title")),
+                    Description = reader.IsDBNull(reader.GetOrdinal("Description")) ? null : reader.GetString(reader.GetOrdinal("Description")),
+                    StartDate = reader.IsDBNull(reader.GetOrdinal("StartDate")) ? null : reader.GetDateTime(reader.GetOrdinal("StartDate")),
+                    DueDate = reader.IsDBNull(reader.GetOrdinal("DueDate")) ? null : reader.GetDateTime(reader.GetOrdinal("DueDate")),
+                    StatusName = reader.IsDBNull(reader.GetOrdinal("StatusName")) ? null : reader.GetString(reader.GetOrdinal("StatusName")),
+                    PriorityName = reader.IsDBNull(reader.GetOrdinal("PriorityName")) ? null : reader.GetString(reader.GetOrdinal("PriorityName")),
+                    UserFullName = reader.IsDBNull(reader.GetOrdinal("UserFullName")) ? null : reader.GetString(reader.GetOrdinal("UserFullName"))
+                });
             }
 
             return result;
         }
 
+        public TaskDto? GetDtoById(int taskId)
+        {
+            return _context.Tasks
+                .Include(t => t.Priority)
+                .Include(t => t.Status)
+                .Include(t => t.User)
+                .Where(t => t.TaskId == taskId)
+                .Select(t => new TaskDto
+                {
+                    TaskId = t.TaskId,
+                    Title = t.Title,
+                    Description = t.Description,
+                    StartDate = t.StartDate,
+                    DueDate = t.DueDate,
+                    PriorityName = t.Priority != null ? t.Priority.PriorityName : null,
+                    StatusName = t.Status != null ? t.Status.StatusName : null,
+                    UserFullName = t.User != null ? t.User.FullName : null
+                })
+                .FirstOrDefault();
+        }
 
+        public void UpdateStatus(int taskId, int statusId)
+        {
+            var task = _context.Tasks.FirstOrDefault(t => t.TaskId == taskId);
+            if (task == null) throw new Exception("Task not found.");
+            task.StatusId = statusId;
+            _context.SaveChanges();
+        }
     }
 }
