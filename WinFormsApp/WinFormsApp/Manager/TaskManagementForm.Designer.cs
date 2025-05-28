@@ -54,13 +54,13 @@
             dgvTasks.RowHeadersWidth = 51;
             dgvTasks.RowTemplate.Height = 29;
             dgvTasks.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvTasks.Size = new Size(879, 387);
+            dgvTasks.Size = new Size(912, 328);
             dgvTasks.TabIndex = 0;
             // 
             // btnAdd
             // 
             btnAdd.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btnAdd.Location = new Point(25, 475);
+            btnAdd.Location = new Point(25, 416);
             btnAdd.Margin = new Padding(4);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(125, 50);
@@ -72,7 +72,7 @@
             // btnEdit
             // 
             btnEdit.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btnEdit.Location = new Point(175, 475);
+            btnEdit.Location = new Point(175, 416);
             btnEdit.Margin = new Padding(4);
             btnEdit.Name = "btnEdit";
             btnEdit.Size = new Size(125, 50);
@@ -84,7 +84,7 @@
             // btnDelete
             // 
             btnDelete.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btnDelete.Location = new Point(325, 475);
+            btnDelete.Location = new Point(325, 416);
             btnDelete.Margin = new Padding(4);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(125, 50);
@@ -96,7 +96,7 @@
             // btnView
             // 
             btnView.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btnView.Location = new Point(475, 475);
+            btnView.Location = new Point(475, 416);
             btnView.Margin = new Padding(4);
             btnView.Name = "btnView";
             btnView.Size = new Size(150, 50);
@@ -108,7 +108,7 @@
             // txtSearchTitle
             // 
             txtSearchTitle.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            txtSearchTitle.Location = new Point(24, 435);
+            txtSearchTitle.Location = new Point(24, 376);
             txtSearchTitle.Margin = new Padding(4);
             txtSearchTitle.Name = "txtSearchTitle";
             txtSearchTitle.PlaceholderText = "Tiêu đề...";
@@ -119,7 +119,7 @@
             // cmbStatus
             // 
             cmbStatus.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            cmbStatus.Location = new Point(237, 435);
+            cmbStatus.Location = new Point(237, 376);
             cmbStatus.Margin = new Padding(4);
             cmbStatus.Name = "cmbStatus";
             cmbStatus.Size = new Size(149, 33);
@@ -128,7 +128,7 @@
             // cmbPriority
             // 
             cmbPriority.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            cmbPriority.Location = new Point(411, 435);
+            cmbPriority.Location = new Point(411, 376);
             cmbPriority.Margin = new Padding(4);
             cmbPriority.Name = "cmbPriority";
             cmbPriority.Size = new Size(149, 33);
@@ -137,7 +137,7 @@
             // btnSearch
             // 
             btnSearch.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btnSearch.Location = new Point(587, 435);
+            btnSearch.Location = new Point(587, 376);
             btnSearch.Margin = new Padding(4);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(125, 34);
@@ -149,7 +149,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(954, 544);
+            ClientSize = new Size(987, 485);
             Controls.Add(dgvTasks);
             Controls.Add(btnAdd);
             Controls.Add(btnEdit);

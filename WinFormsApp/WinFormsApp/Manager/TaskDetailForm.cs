@@ -58,13 +58,13 @@ namespace WinFormsApp.Manager
             }
         }
 
-        // Save button click handler
+        
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (!ValidateForm())
                 return;
 
-            // Thực hiện update task từ form rồi lưu như trước
+           
             UpdateTaskFromForm();
 
             try
@@ -129,7 +129,7 @@ namespace WinFormsApp.Manager
                 return false;
             }
 
-            // Tương tự với các trường khác nếu cần
+          
 
             return true;
         }

@@ -110,7 +110,7 @@ namespace WinFormsApp.Repositories
 
             try
             {
-                _context.Database.OpenConnection(); // Mở kết nối an toàn
+                _context.Database.OpenConnection(); 
                 using (var command = connection.CreateCommand())
                 {
                     command.CommandText = "sp_FilterTasks";

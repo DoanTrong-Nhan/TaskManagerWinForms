@@ -34,8 +34,13 @@ public partial class TaskManagerDbContext : DbContext
     {
         _configuration = configuration;
     }
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-         => optionsBuilder.UseSqlServer("Server=localhost;Database=TaskManagerDB;Trusted_Connection=True;TrustServerCertificate=True;");
+/*    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        if (!optionsBuilder.IsConfigured)
+        {
+            optionsBuilder.UseSqlServer("Server=localhost;Database=TaskManagerDB;Trusted_Connection=True;TrustServerCertificate=True;");
+        }
+    }*/
 
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

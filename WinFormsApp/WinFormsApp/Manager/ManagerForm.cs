@@ -17,19 +17,23 @@ namespace WinFormsApp
 
         private void btnTasks_Click(object sender, EventArgs e)
         {
-            var taskForm = new TaskManagementForm(_taskService);  // Là một Form
-            taskForm.Show();  // hoặc ShowDialog() nếu muốn dạng popup modal
+            this.Hide();
+
+            var taskForm = new TaskManagementForm(_taskService);
+
+            taskForm.FormClosed += (s, args) => this.Show();
+            taskForm.Show();  
         }
 
         private void btnEmployees_Click(object sender, EventArgs e)
         {
-            var empForm = new EmployeeManagementForm();  // Là một Form
+            var empForm = new EmployeeManagementForm(); 
             empForm.Show();
         }
 
         private void btnReport_Click(object sender, EventArgs e)
         {
-            var reportForm = new ReportForm();  // Là một Form
+            var reportForm = new ReportForm(); 
             reportForm.Show();
         }
     }

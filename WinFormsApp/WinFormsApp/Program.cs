@@ -19,7 +19,7 @@ namespace WinFormsApp
 
             // Tạo cấu hình từ appsettings.json
             var configuration = new ConfigurationBuilder()
-                .SetBasePath(AppContext.BaseDirectory) // Đảm bảo đường dẫn đúng
+                .SetBasePath(AppContext.BaseDirectory)
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                 .Build();
 

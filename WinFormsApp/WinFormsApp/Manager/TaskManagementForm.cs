@@ -114,6 +114,7 @@ namespace WinFormsApp
 
             MessageBox.Show(
                 $"Tiêu đề: {task.Title}\n" +
+                $"Mô tả: {task.Description}\n" +
                 $"Bắt đầu: {task.StartDate:dd/MM/yyyy}\n" +
                 $"Hạn chót: {task.DueDate:dd/MM/yyyy}\n" +
                 $"Trạng thái: {task.Status?.StatusName ?? "Không rõ"}\n" +
@@ -132,12 +133,13 @@ namespace WinFormsApp
             dgvTasks.Columns.Clear();
             dgvTasks.Columns.Add(new DataGridViewTextBoxColumn
             {
-                Name = "TaskId", // thêm dòng này
+                Name = "TaskId", 
                 DataPropertyName = "TaskId",
                 HeaderText = "Mã"
             });
 
             dgvTasks.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Title", HeaderText = "Tiêu đề" });
+            dgvTasks.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Description", HeaderText = "Mô tả" });
             dgvTasks.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "StartDateStr", HeaderText = "Bắt đầu" });
             dgvTasks.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "DueDateStr", HeaderText = "Hạn chót" });
             dgvTasks.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "StatusName", HeaderText = "Trạng thái" });
