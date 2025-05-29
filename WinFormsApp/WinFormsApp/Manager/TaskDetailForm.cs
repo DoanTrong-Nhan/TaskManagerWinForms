@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp.Combobox;
 using WinFormsApp.Models;
 using WinFormsApp.Services;
 
@@ -24,32 +25,39 @@ namespace WinFormsApp.Manager
             LoadFormDataAsync(); 
         }
 
-     
+
         private async void LoadFormDataAsync()
         {
             try
             {
                 var statuses = await _taskService.GetAllStatusesAsync();
                 var priorities = await _taskService.GetAllPrioritiesAsync();
-                var users = await _taskService.GetUsersByRoleAsync(3); 
+                var users = await _taskService.GetUsersByRoleAsync(3);
 
-              
-                cboStatus.DataSource = statuses;
-                cboStatus.DisplayMember = "StatusName";
-                cboStatus.ValueMember = "StatusId";
+               
+                cboStatus.Items.Clear();
+                foreach (var status in statuses)
+                {
+                    cboStatus.Items.Add(new ComboBoxItem(status.StatusName, status.StatusId));
+                }
 
-                cboPriority.DataSource = priorities;
-                cboPriority.DisplayMember = "PriorityName";
-                cboPriority.ValueMember = "PriorityId";
+               
+                cboPriority.Items.Clear();
+                foreach (var priority in priorities)
+                {
+                    cboPriority.Items.Add(new ComboBoxItem(priority.PriorityName, priority.PriorityId));
+                }
 
-                cboUser.DataSource = users;
-                cboUser.DisplayMember = "FullName";
-                cboUser.ValueMember = "UserId";
+                
+                cboUser.Items.Clear();
+                foreach (var user in users)
+                {
+                    cboUser.Items.Add(new ComboBoxItem(user.FullName, user.UserId));
+                }
 
- 
                 if (_isEditMode)
                 {
-                    PopulateFormFromTask();
+                    LoadFormFromTask();
                 }
             }
             catch (Exception ex)
@@ -58,7 +66,8 @@ namespace WinFormsApp.Manager
             }
         }
 
-        
+
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (!ValidateForm())
@@ -84,15 +93,30 @@ namespace WinFormsApp.Manager
         }
 
 
-        private void PopulateFormFromTask()
+        private void LoadFormFromTask()
         {
             txtTitle.Text = _task.Title;
             txtDescription.Text = _task.Description;
             dtpStart.Value = _task.StartDate ?? DateTime.Now;
             dtpDue.Value = _task.DueDate ?? DateTime.Now;
-            cboStatus.SelectedValue = _task.StatusId ?? -1;
-            cboPriority.SelectedValue = _task.PriorityId ?? -1;
-            cboUser.SelectedValue = _task.UserId ?? -1;
+
+            SelectComboBoxItemByValue(cboStatus, _task.StatusId);
+            SelectComboBoxItemByValue(cboPriority, _task.PriorityId);
+            SelectComboBoxItemByValue(cboUser, _task.UserId);
+        }
+
+        private void SelectComboBoxItemByValue(ComboBox comboBox, object? value)
+        {
+            if (value == null) return;
+
+            foreach (ComboBoxItem item in comboBox.Items)
+            {
+                if (item.Value != null && item.Value.Equals(value))
+                {
+                    comboBox.SelectedItem = item;
+                    break;
+                }
+            }
         }
 
         private void UpdateTaskFromForm()
@@ -101,10 +125,22 @@ namespace WinFormsApp.Manager
             _task.Description = txtDescription.Text;
             _task.StartDate = dtpStart.Value;
             _task.DueDate = dtpDue.Value;
-            _task.StatusId = (int?)cboStatus.SelectedValue;
-            _task.PriorityId = (int?)cboPriority.SelectedValue;
-            _task.UserId = (int?)cboUser.SelectedValue;
+
+            _task.StatusId = GetSelectedComboBoxValue(cboStatus);
+            _task.PriorityId = GetSelectedComboBoxValue(cboPriority);
+            _task.UserId = GetSelectedComboBoxValue(cboUser);
         }
+
+        private int? GetSelectedComboBoxValue(ComboBox comboBox)
+        {
+            if (comboBox.SelectedItem is ComboBoxItem item && item.Value is int intValue)
+            {
+                return intValue;
+            }
+
+            return null;
+        }
+
 
         private bool ValidateForm()
         {

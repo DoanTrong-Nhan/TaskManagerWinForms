@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
+using WinFormsApp.Combobox;
 using WinFormsApp.Dtos;
 using WinFormsApp.Manager;
 using WinFormsApp.Models;
@@ -24,7 +25,6 @@ namespace WinFormsApp
         {
             var taskDtos = _taskService.GetAllDtos();
 
-            dgvTasks.DataSource = null;
             dgvTasks.DataSource = taskDtos;
 
             SetTaskGridHeaders();
@@ -35,15 +35,21 @@ namespace WinFormsApp
             var statuses = await _taskService.GetAllStatusesAsync();
             var priorities = await _taskService.GetAllPrioritiesAsync();
 
-            cmbStatus.DisplayMember = "StatusName";
-            cmbStatus.ValueMember = "StatusId";
-            cmbStatus.DataSource = statuses;
-            cmbStatus.SelectedIndex = -1;
+            cmbStatus.Items.Clear();
+          
+            foreach (var status in statuses)
+            {
+                cmbStatus.Items.Add(new ComboBoxItem(status.StatusName, status.StatusId));
+            }
+          
 
-            cmbPriority.DisplayMember = "PriorityName";
-            cmbPriority.ValueMember = "PriorityId";
-            cmbPriority.DataSource = priorities;
-            cmbPriority.SelectedIndex = -1;
+            cmbPriority.Items.Clear();
+           
+            foreach (var priority in priorities)
+            {
+                cmbPriority.Items.Add(new ComboBoxItem(priority.PriorityName, priority.PriorityId));
+            }
+         
         }
 
 
@@ -52,8 +58,9 @@ namespace WinFormsApp
         private void btnSearch_Click(object sender, EventArgs e)
         {
             string? title = string.IsNullOrWhiteSpace(txtSearchTitle.Text) ? null : txtSearchTitle.Text;
-            int? statusId = cmbStatus.SelectedItem != null ? (int?)cmbStatus.SelectedValue : null;
-            int? priorityId = cmbPriority.SelectedItem != null ? (int?)cmbPriority.SelectedValue : null;
+
+            int? statusId = GetSelectedComboBoxValue(cmbStatus);
+            int? priorityId = GetSelectedComboBoxValue(cmbPriority);
 
             var filteredTasks = _taskService.GetFilteredTasks(title, statusId, priorityId);
 
@@ -62,6 +69,7 @@ namespace WinFormsApp
 
             SetTaskGridHeaders();
         }
+
 
         private int? GetSelectedTaskId()
         {
@@ -113,14 +121,14 @@ namespace WinFormsApp
             if (task == null) return;
 
             MessageBox.Show(
-                $"Tiêu đề: {task.Title}\n" +
-                $"Mô tả: {task.Description}\n" +
-                $"Bắt đầu: {task.StartDate:dd/MM/yyyy}\n" +
-                $"Hạn chót: {task.DueDate:dd/MM/yyyy}\n" +
-                $"Trạng thái: {task.Status?.StatusName ?? "Không rõ"}\n" +
-                $"Ưu tiên: {task.Priority?.PriorityName ?? "Không rõ"}\n" +
-                $"Người thực hiện: {task.User?.FullName ?? "Không có"}",
-                "Chi tiết công việc",
+                $"{task.Title}\n" +
+                $"{task.Description}\n" +
+                $"{task.StartDate:dd/MM/yyyy}\n" +
+                $"{task.DueDate:dd/MM/yyyy}\n" +
+                $"{task.Status?.StatusName ?? ""}\n" +
+                $"{task.Priority?.PriorityName ?? ""}\n" +
+                $"{task.User?.FullName ?? ""}",
+                "",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information
             );
@@ -147,6 +155,17 @@ namespace WinFormsApp
             dgvTasks.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "UserFullName", HeaderText = "Người thực hiện" });
 
         }
+
+        private int? GetSelectedComboBoxValue(ComboBox comboBox)
+        {
+            if (comboBox.SelectedItem is ComboBoxItem item && item.Value is int intValue)
+            {
+                return intValue;
+            }
+
+            return null;
+        }
+
 
     }
 }
