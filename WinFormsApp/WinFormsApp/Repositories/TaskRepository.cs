@@ -136,20 +136,20 @@ namespace WinFormsApp.Repositories
         public List<TaskDto> GetFilteredTasks(string? title, int? statusId, int? priorityId)
         {
             var taskDtos = new List<TaskDto>();
-
             var connection = _context.Database.GetDbConnection();
 
             try
             {
-                _context.Database.OpenConnection(); 
+                _context.Database.OpenConnection();
+
                 using (var command = connection.CreateCommand())
                 {
                     command.CommandText = "sp_FilterTasks";
-                    command.CommandType = System.Data.CommandType.StoredProcedure;
+                    command.CommandType = CommandType.StoredProcedure;
 
-                    command.Parameters.Add(new SqlParameter("@Title", title ?? (object)DBNull.Value));
-                    command.Parameters.Add(new SqlParameter("@StatusId", statusId ?? (object)DBNull.Value));
-                    command.Parameters.Add(new SqlParameter("@PriorityId", priorityId ?? (object)DBNull.Value));
+                    command.Parameters.Add(new SqlParameter(SqlConstants.ParamTitle, title ?? (object)DBNull.Value));
+                    command.Parameters.Add(new SqlParameter(SqlConstants.ParamStatusId, statusId ?? (object)DBNull.Value));
+                    command.Parameters.Add(new SqlParameter(SqlConstants.ParamPriorityId, priorityId ?? (object)DBNull.Value));
 
                     using (var reader = command.ExecuteReader())
                     {
@@ -157,20 +157,19 @@ namespace WinFormsApp.Repositories
                         {
                             var dto = new TaskDto
                             {
-                                TaskId = reader.GetInt32(reader.GetOrdinal("TaskId")),
-                                Title = reader.GetString(reader.GetOrdinal("Title")),
-                                Description = reader.IsDBNull(reader.GetOrdinal("Description")) ? null : reader.GetString(reader.GetOrdinal("Description")),
-                                StartDate = reader.IsDBNull(reader.GetOrdinal("StartDate")) ? null : reader.GetDateTime(reader.GetOrdinal("StartDate")),
-                                DueDate = reader.IsDBNull(reader.GetOrdinal("DueDate")) ? null : reader.GetDateTime(reader.GetOrdinal("DueDate")),
-                                StatusName = reader.IsDBNull(reader.GetOrdinal("StatusName")) ? null : reader.GetString(reader.GetOrdinal("StatusName")),
-                                PriorityName = reader.IsDBNull(reader.GetOrdinal("PriorityName")) ? null : reader.GetString(reader.GetOrdinal("PriorityName")),
-                                UserFullName = reader.IsDBNull(reader.GetOrdinal("UserFullName")) ? null : reader.GetString(reader.GetOrdinal("UserFullName")),
+                                TaskId = reader.GetInt32(reader.GetOrdinal(SqlConstants.ColTaskId)),
+                                Title = reader.GetString(reader.GetOrdinal(SqlConstants.ColTitle)),
+                                Description = reader.IsDBNull(reader.GetOrdinal(SqlConstants.ColDescription)) ? null : reader.GetString(reader.GetOrdinal(SqlConstants.ColDescription)),
+                                StartDate = reader.IsDBNull(reader.GetOrdinal(SqlConstants.ColStartDate)) ? null : reader.GetDateTime(reader.GetOrdinal(SqlConstants.ColStartDate)),
+                                DueDate = reader.IsDBNull(reader.GetOrdinal(SqlConstants.ColDueDate)) ? null : reader.GetDateTime(reader.GetOrdinal(SqlConstants.ColDueDate)),
+                                StatusName = reader.IsDBNull(reader.GetOrdinal(SqlConstants.ColStatusName)) ? null : reader.GetString(reader.GetOrdinal(SqlConstants.ColStatusName)),
+                                PriorityName = reader.IsDBNull(reader.GetOrdinal(SqlConstants.ColPriorityName)) ? null : reader.GetString(reader.GetOrdinal(SqlConstants.ColPriorityName)),
+                                UserFullName = reader.IsDBNull(reader.GetOrdinal(SqlConstants.ColUserFullName)) ? null : reader.GetString(reader.GetOrdinal(SqlConstants.ColUserFullName)),
                             };
 
                             taskDtos.Add(dto);
                         }
                     }
-
                 }
             }
             catch (Exception ex)
@@ -179,12 +178,11 @@ namespace WinFormsApp.Repositories
             }
             finally
             {
-                _context.Database.CloseConnection(); // Đóng lại sau khi xong
+                _context.Database.CloseConnection();
             }
 
             return taskDtos;
         }
-
         public TaskDto? GetDtoById(int taskId)
         {
             return _context.Tasks
