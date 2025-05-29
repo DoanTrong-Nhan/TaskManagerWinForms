@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using WinFormsApp.DBContext;
 using WinFormsApp.Dtos;
 using WinFormsApp.Models;
 
@@ -139,7 +140,12 @@ namespace WinFormsApp.Repositories
                             taskDtos.Add(dto);
                         }
                     }
+
                 }
+            }
+            catch (Exception ex)
+            {
+                throw new InvalidOperationException("Error while executing GetFilteredTasks.", ex);
             }
             finally
             {

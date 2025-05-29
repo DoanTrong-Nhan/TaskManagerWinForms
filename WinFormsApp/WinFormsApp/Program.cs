@@ -3,10 +3,10 @@ using System.Windows.Forms;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
-using WinFormsApp.Models;
 using WinFormsApp.Repositories;
 using WinFormsApp.Services;
 using WinFormsApp.Manager;
+using WinFormsApp.DBContext;
 
 namespace WinFormsApp
 {

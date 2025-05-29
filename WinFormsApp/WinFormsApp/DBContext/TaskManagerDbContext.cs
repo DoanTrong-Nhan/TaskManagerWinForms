@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using WinFormsApp.Models;
 
 
-namespace WinFormsApp.Models;
+namespace WinFormsApp.DBContext;
 
 public partial class TaskManagerDbContext : DbContext
 {
@@ -20,13 +21,13 @@ public partial class TaskManagerDbContext : DbContext
 
     public virtual DbSet<Role> Roles { get; set; }
 
-    public virtual DbSet<Task> Tasks { get; set; }
+    public virtual DbSet<Models.Task> Tasks { get; set; }
 
     public virtual DbSet<TaskComment> TaskComments { get; set; }
 
     public virtual DbSet<TaskPriority> TaskPriorities { get; set; }
 
-    public virtual DbSet<TaskStatus> TaskStatuses { get; set; }
+    public virtual DbSet<Models.TaskStatus> TaskStatuses { get; set; }
 
     public virtual DbSet<User> Users { get; set; }
 
@@ -34,14 +35,6 @@ public partial class TaskManagerDbContext : DbContext
     {
         _configuration = configuration;
     }
-/*    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    {
-        if (!optionsBuilder.IsConfigured)
-        {
-            optionsBuilder.UseSqlServer("Server=localhost;Database=TaskManagerDB;Trusted_Connection=True;TrustServerCertificate=True;");
-        }
-    }*/
-
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -52,7 +45,7 @@ public partial class TaskManagerDbContext : DbContext
             entity.Property(e => e.RoleName).HasMaxLength(50);
         });
 
-        modelBuilder.Entity<Task>(entity =>
+        modelBuilder.Entity<Models.Task>(entity =>
         {
             entity.HasKey(e => e.TaskId).HasName("PK__Tasks__7C6949B1BB1089A2");
 
@@ -73,7 +66,7 @@ public partial class TaskManagerDbContext : DbContext
                 .HasConstraintName("FK__Tasks__UserId__47DBAE45");
         });
 
-        modelBuilder.Entity<TaskComment>(entity =>
+        modelBuilder.Entity<Models.TaskComment>(entity =>
         {
             entity.HasKey(e => e.CommentId).HasName("PK__TaskComm__C3B4DFCAFEFAEA54");
 
@@ -95,7 +88,7 @@ public partial class TaskManagerDbContext : DbContext
             entity.Property(e => e.PriorityName).HasMaxLength(50);
         });
 
-        modelBuilder.Entity<TaskStatus>(entity =>
+        modelBuilder.Entity<Models.TaskStatus>(entity =>
         {
             entity.HasKey(e => e.StatusId).HasName("PK__TaskStat__C8EE2063A58FCE5B");
 

@@ -136,17 +136,10 @@ C:\Users\nhant\OneDrive\Desktop\Winfor\TaskManagerWinForms\WinFormsApp\WinFormsA
 C:\Users\nhant\OneDrive\Desktop\Winfor\TaskManagerWinForms\WinFormsApp\WinFormsApp\bin\Release\net8.0-windows\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
 C:\Users\nhant\OneDrive\Desktop\Winfor\TaskManagerWinForms\WinFormsApp\WinFormsApp\bin\Release\net8.0-windows\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
 C:\Users\nhant\OneDrive\Desktop\Winfor\TaskManagerWinForms\WinFormsApp\WinFormsApp\obj\Release\net8.0-windows\WinFormsApp.csproj.AssemblyReference.cache
-C:\Users\nhant\OneDrive\Desktop\Winfor\TaskManagerWinForms\WinFormsApp\WinFormsApp\obj\Release\net8.0-windows\WinFormsApp.AdminForm.resources
-C:\Users\nhant\OneDrive\Desktop\Winfor\TaskManagerWinForms\WinFormsApp\WinFormsApp\obj\Release\net8.0-windows\WinFormsApp.Login.resources
-C:\Users\nhant\OneDrive\Desktop\Winfor\TaskManagerWinForms\WinFormsApp\WinFormsApp\obj\Release\net8.0-windows\WinFormsApp.MainForm.resources
-C:\Users\nhant\OneDrive\Desktop\Winfor\TaskManagerWinForms\WinFormsApp\WinFormsApp\obj\Release\net8.0-windows\WinFormsApp.EmployeeManagementForm.resources
-C:\Users\nhant\OneDrive\Desktop\Winfor\TaskManagerWinForms\WinFormsApp\WinFormsApp\obj\Release\net8.0-windows\WinFormsApp.ManagerForm.resources
-C:\Users\nhant\OneDrive\Desktop\Winfor\TaskManagerWinForms\WinFormsApp\WinFormsApp\obj\Release\net8.0-windows\WinFormsApp.ReportForm.resources
 C:\Users\nhant\OneDrive\Desktop\Winfor\TaskManagerWinForms\WinFormsApp\WinFormsApp\obj\Release\net8.0-windows\WinFormsApp.Manager.TaskDetailForm.resources
 C:\Users\nhant\OneDrive\Desktop\Winfor\TaskManagerWinForms\WinFormsApp\WinFormsApp\obj\Release\net8.0-windows\WinFormsApp.TaskManagementForm.resources
 C:\Users\nhant\OneDrive\Desktop\Winfor\TaskManagerWinForms\WinFormsApp\WinFormsApp\obj\Release\net8.0-windows\WinFormsApp.MemberForm.resources
 C:\Users\nhant\OneDrive\Desktop\Winfor\TaskManagerWinForms\WinFormsApp\WinFormsApp\obj\Release\net8.0-windows\WinFormsApp.Member.TaskDetailForm.resources
-C:\Users\nhant\OneDrive\Desktop\Winfor\TaskManagerWinForms\WinFormsApp\WinFormsApp\obj\Release\net8.0-windows\WinFormsApp.Register.resources
 C:\Users\nhant\OneDrive\Desktop\Winfor\TaskManagerWinForms\WinFormsApp\WinFormsApp\obj\Release\net8.0-windows\WinFormsApp.csproj.GenerateResource.cache
 C:\Users\nhant\OneDrive\Desktop\Winfor\TaskManagerWinForms\WinFormsApp\WinFormsApp\obj\Release\net8.0-windows\WinFormsApp.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\nhant\OneDrive\Desktop\Winfor\TaskManagerWinForms\WinFormsApp\WinFormsApp\obj\Release\net8.0-windows\WinFormsApp.AssemblyInfoInputs.cache
