@@ -40,19 +40,49 @@ namespace WinFormsApp.Repositories
         public void Add(Models.Task task)
         {
             if (task == null) throw new ArgumentNullException(nameof(task));
-            _context.Tasks.Add(task);
+
+            try
+            {
+                _context.Tasks.Add(task);
+            }
+            catch (Exception ex)
+            {
+                throw new InvalidOperationException("Lỗi khi thêm Task vào cơ sở dữ liệu.", ex);
+            }
         }
 
         public void Update(Models.Task task)
         {
             if (task == null) throw new ArgumentNullException(nameof(task));
-            _context.Tasks.Update(task);
+
+            try
+            {
+                _context.Tasks.Update(task);
+            }
+            catch (Exception ex)
+            {
+                throw new InvalidOperationException("Lỗi khi cập nhật Task trong cơ sở dữ liệu.", ex);
+            }
         }
 
         public void Delete(int id)
         {
-            var task = _context.Tasks.Find(id);
-            if (task != null) _context.Tasks.Remove(task);
+            try
+            {
+                var task = _context.Tasks.Find(id);
+                if (task != null)
+                {
+                    _context.Tasks.Remove(task);
+                }
+                else
+                {
+                    throw new KeyNotFoundException($"Không tìm thấy Task với ID = {id} để xóa.");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new InvalidOperationException($"Lỗi khi xóa Task có ID = {id} khỏi cơ sở dữ liệu.", ex);
+            }
         }
 
         public void Save()
@@ -175,7 +205,7 @@ namespace WinFormsApp.Repositories
                 })
                 .FirstOrDefault();
         }
-
+        
         public void UpdateStatus(int taskId, int statusId)
         {
             var task = _context.Tasks.FirstOrDefault(t => t.TaskId == taskId);
