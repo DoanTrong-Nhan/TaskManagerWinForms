@@ -34,12 +34,6 @@ namespace WinFormsApp
             services.AddScoped<ITaskRepository, TaskRepository>();
             services.AddScoped<ITaskService, TaskService>();
 
-            // Đăng ký Forms
-            services.AddTransient<Login>();
-            services.AddTransient<AdminForm>();
-            services.AddTransient<ManagerForm>();
-            services.AddTransient<MemberForm>();
-            services.AddTransient<Register>();
             services.AddTransient<TaskManagementForm>();
             services.AddTransient<TaskDetailForm>(); 
 
@@ -48,7 +42,7 @@ namespace WinFormsApp
             var serviceProvider = services.BuildServiceProvider();
 
             // Lấy login form từ DI
-            var loginForm = serviceProvider.GetRequiredService<Login>();
+            var loginForm = serviceProvider.GetRequiredService<TaskManagementForm>();
 
             // Chạy ứng dụng
             Application.Run(loginForm);

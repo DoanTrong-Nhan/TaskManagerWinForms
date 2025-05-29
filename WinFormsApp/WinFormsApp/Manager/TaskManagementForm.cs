@@ -17,8 +17,9 @@ namespace WinFormsApp
         {
             _taskService = taskService;
             InitializeComponent();
-            LoadFilterDataAsync();
+
             LoadTasks();
+            _ = LoadFilterDataAsync();
         }
 
         private void LoadTasks()
@@ -136,23 +137,9 @@ namespace WinFormsApp
 
         private void SetTaskGridHeaders()
         {
-            dgvTasks.AutoGenerateColumns = false;
+            dgvTasks.AutoGenerateColumns = true;
+            dgvTasks.DataSource = _taskService.GetAllDtos();
 
-            dgvTasks.Columns.Clear();
-            dgvTasks.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                Name = "TaskId", 
-                DataPropertyName = "TaskId",
-                HeaderText = "Mã"
-            });
-
-            dgvTasks.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Title", HeaderText = "Tiêu đề" });
-            dgvTasks.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Description", HeaderText = "Mô tả" });
-            dgvTasks.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "StartDateStr", HeaderText = "Bắt đầu" });
-            dgvTasks.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "DueDateStr", HeaderText = "Hạn chót" });
-            dgvTasks.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "StatusName", HeaderText = "Trạng thái" });
-            dgvTasks.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "PriorityName", HeaderText = "Độ ưu tiên" });
-            dgvTasks.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "UserFullName", HeaderText = "Người thực hiện" });
 
         }
 

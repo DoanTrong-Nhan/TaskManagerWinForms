@@ -18,18 +18,6 @@ namespace WinFormsApp.Member
             _taskService = taskService;
         }
 
-
-        public void LoadTaskData(TaskDto taskDto)
-        {
-            // Load data to the form
-            txtTitle.Text = _taskDto.Title;
-            txtDescription.Text = _taskDto.Description;
-            lblStartDate.Text = _taskDto.StartDateStr;
-            lblDueDate.Text = _taskDto.DueDateStr;
-            // Thực hiện các thao tác cần thiết với các điều khiển khác
-        }
-
-
         private async void TaskDetailForm_Load(object sender, EventArgs e)
         {
             // Kiểm tra nếu _taskDto có giá trị hợp lệ
@@ -42,8 +30,8 @@ namespace WinFormsApp.Member
             // Bind the task data to the form fields
             txtTitle.Text = _taskDto.Title;
             txtDescription.Text = _taskDto.Description;
-            lblStartDate.Text = _taskDto.StartDateStr;
-            lblDueDate.Text = _taskDto.DueDateStr;
+            lblStartDate.Text = _taskDto.StartDate.Value.ToString("dd/MM/yyyy");
+            lblDueDate.Text = _taskDto.DueDate.Value.ToString("dd/MM/yyyy");
 
             var statuses = await _taskService.GetAllStatusesAsync();
             cboStatus.DataSource = statuses;
