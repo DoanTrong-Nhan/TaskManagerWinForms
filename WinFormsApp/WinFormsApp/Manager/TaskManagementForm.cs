@@ -138,7 +138,6 @@ namespace WinFormsApp
         private void SetTaskGridHeaders()
         {
             dgvTasks.AutoGenerateColumns = true;
-            dgvTasks.DataSource = _taskService.GetAllDtos();
 
 
         }
