@@ -23,7 +23,6 @@ namespace WinFormsApp.Repositories
         // DTO
         List<TaskDto> GetAllWithDetails();
         List<TaskDto> GetFilteredTasks(string? title, int? statusId, int? priorityId);
-        List<TaskDto> GetByUserId(int userId);
         TaskDto? GetDtoById(int taskId);
 
         // Custom Updates

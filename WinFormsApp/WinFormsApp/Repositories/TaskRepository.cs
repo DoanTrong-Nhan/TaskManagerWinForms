@@ -155,37 +155,6 @@ namespace WinFormsApp.Repositories
             return taskDtos;
         }
 
-        public List<TaskDto> GetByUserId(int userId)
-        {
-            var result = new List<TaskDto>();
-
-            using var conn = _context.Database.GetDbConnection();
-            if (conn.State != ConnectionState.Open) conn.Open();
-
-            using var cmd = conn.CreateCommand();
-            cmd.CommandText = "sp_GetTasksByUserId";
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add(new SqlParameter("@UserId", userId));
-
-            using var reader = cmd.ExecuteReader();
-            while (reader.Read())
-            {
-                result.Add(new TaskDto
-                {
-                    TaskId = reader.GetInt32(reader.GetOrdinal("TaskId")),
-                    Title = reader.GetString(reader.GetOrdinal("Title")),
-                    Description = reader.IsDBNull(reader.GetOrdinal("Description")) ? null : reader.GetString(reader.GetOrdinal("Description")),
-                    StartDate = reader.IsDBNull(reader.GetOrdinal("StartDate")) ? null : reader.GetDateTime(reader.GetOrdinal("StartDate")),
-                    DueDate = reader.IsDBNull(reader.GetOrdinal("DueDate")) ? null : reader.GetDateTime(reader.GetOrdinal("DueDate")),
-                    StatusName = reader.IsDBNull(reader.GetOrdinal("StatusName")) ? null : reader.GetString(reader.GetOrdinal("StatusName")),
-                    PriorityName = reader.IsDBNull(reader.GetOrdinal("PriorityName")) ? null : reader.GetString(reader.GetOrdinal("PriorityName")),
-                    UserFullName = reader.IsDBNull(reader.GetOrdinal("UserFullName")) ? null : reader.GetString(reader.GetOrdinal("UserFullName"))
-                });
-            }
-
-            return result;
-        }
-
         public TaskDto? GetDtoById(int taskId)
         {
             return _context.Tasks

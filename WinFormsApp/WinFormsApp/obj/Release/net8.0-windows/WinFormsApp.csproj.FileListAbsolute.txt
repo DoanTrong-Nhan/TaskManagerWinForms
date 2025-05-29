@@ -138,8 +138,6 @@ C:\Users\nhant\OneDrive\Desktop\Winfor\TaskManagerWinForms\WinFormsApp\WinFormsA
 C:\Users\nhant\OneDrive\Desktop\Winfor\TaskManagerWinForms\WinFormsApp\WinFormsApp\obj\Release\net8.0-windows\WinFormsApp.csproj.AssemblyReference.cache
 C:\Users\nhant\OneDrive\Desktop\Winfor\TaskManagerWinForms\WinFormsApp\WinFormsApp\obj\Release\net8.0-windows\WinFormsApp.Manager.TaskDetailForm.resources
 C:\Users\nhant\OneDrive\Desktop\Winfor\TaskManagerWinForms\WinFormsApp\WinFormsApp\obj\Release\net8.0-windows\WinFormsApp.TaskManagementForm.resources
-C:\Users\nhant\OneDrive\Desktop\Winfor\TaskManagerWinForms\WinFormsApp\WinFormsApp\obj\Release\net8.0-windows\WinFormsApp.MemberForm.resources
-C:\Users\nhant\OneDrive\Desktop\Winfor\TaskManagerWinForms\WinFormsApp\WinFormsApp\obj\Release\net8.0-windows\WinFormsApp.Member.TaskDetailForm.resources
 C:\Users\nhant\OneDrive\Desktop\Winfor\TaskManagerWinForms\WinFormsApp\WinFormsApp\obj\Release\net8.0-windows\WinFormsApp.csproj.GenerateResource.cache
 C:\Users\nhant\OneDrive\Desktop\Winfor\TaskManagerWinForms\WinFormsApp\WinFormsApp\obj\Release\net8.0-windows\WinFormsApp.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\nhant\OneDrive\Desktop\Winfor\TaskManagerWinForms\WinFormsApp\WinFormsApp\obj\Release\net8.0-windows\WinFormsApp.AssemblyInfoInputs.cache

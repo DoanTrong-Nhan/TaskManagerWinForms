@@ -54,10 +54,6 @@ namespace WinFormsApp.Services
 
         public List<TaskDto> GetFilteredTasks(string? title, int? statusId, int? priorityId) =>
             _repository.GetFilteredTasks(title, statusId, priorityId);
-
-        public List<TaskDto> GetTasksByUserId(int userId) =>
-            _repository.GetByUserId(userId);
-
         public TaskDto? GetDtoById(int taskId) =>
             _repository.GetDtoById(taskId);
 

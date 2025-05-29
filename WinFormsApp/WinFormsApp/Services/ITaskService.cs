@@ -19,7 +19,6 @@ namespace WinFormsApp.Services
 
         List<TaskDto> GetAllDtos();
         List<TaskDto> GetFilteredTasks(string? title, int? statusId, int? priorityId);
-        List<TaskDto> GetTasksByUserId(int userId);
         TaskDto? GetDtoById(int taskId);
         void UpdateStatus(int taskId, int statusId);
     }
